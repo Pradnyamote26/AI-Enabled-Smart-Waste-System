@@ -20,7 +20,7 @@
       "is_active": true,
       "password_hash": "scrypt:32768:8:1$toN95FIdLgCAAJMM$b9ca5d0ac71543af1bd6e9a15be7811440f28791e44cdd7410d57200389c52fc019bd60da349cb2cfae5f51f81864fc9f2e2bcf8a5542d8185ce295c92cbf79a",
       "created_at": "2026-10-09T07:22:14.050176+00:00",
-      "updated_at": "2026-10-09T20:29:22.623737+00:00"
+      "updated_at": "2026-10-10T02:33:47.126868+00:00"
     },
     "d0000000-0000-0000-0000-000000000002": {
       "id": "d0000000-0000-0000-0000-000000000002",
@@ -486,6 +486,28 @@
       "password_hash": "scrypt:32768:8:1$7D1TooBZp5HrpzNH$5c89f149d2035ac8dcaa60828e18a0640850f065757a041bcc35768c3e2e6fde94ab7b14edd3a6ca4a658c91cfd9173bf36692d07e5dc6cc09f0a55d9ee4c179",
       "id": "2c9d75a7-260a-40b8-a290-b762eb7c46a7",
       "created_at": "2026-10-09T20:29:15.758325+00:00"
+    },
+    "74686bb4-1c7f-4482-8747-60833f38064f": {
+      "full_name": "Ramesh K. Jadhav",
+      "email": "driver.7e6504@smartwaste.gov",
+      "phone": "+91 98200 99999",
+      "license_number": "",
+      "role": "driver",
+      "is_active": false,
+      "password_hash": "scrypt:32768:8:1$b5DnSRcTBD9SywmX$a4c5ab6e6c22669c2bc14bc08f64d1283e9af58082702cd0bb4971f5e142cb86c78a4f880cb151d28080a9c4b85148401bc014300004938a8b5b32eb629e1e5f",
+      "created_at": "2026-10-10T02:33:28.859222+00:00",
+      "id": "74686bb4-1c7f-4482-8747-60833f38064f",
+      "updated_at": "2026-10-10T02:33:28.956047+00:00"
+    },
+    "1c2bde57-1845-46fb-b0b3-e6059f92bed9": {
+      "full_name": "Test Citizen",
+      "email": "citizen.test.c90324@example.com",
+      "phone": "",
+      "role": "reporter",
+      "is_active": true,
+      "password_hash": "scrypt:32768:8:1$rlXgnoyiTMwDEzbw$6994c471bfb1e1b38f40b6972a3627b49666cbdaf6f624c7399770e5d910df7afb77d02c6e5ddba8152579bd2faca9e36e5e15d33951c947f915d37909bc9a91",
+      "id": "1c2bde57-1845-46fb-b0b3-e6059f92bed9",
+      "created_at": "2026-10-10T02:33:39.347519+00:00"
     }
   },
   "dumpyards": {
@@ -912,6 +934,23 @@
       "id": "4362fdf2-e78a-4fae-a956-905f12e1694b",
       "qr_last_regenerated_at": "2026-10-09T20:29:07.285025+00:00",
       "updated_at": "2026-10-09T20:29:07.337568+00:00"
+    },
+    "ec5fbbcc-8b1c-4e02-ab6c-2f201dce88e0": {
+      "bin_code": "BIN-TEST-7657",
+      "bin_type": "RECYCLABLE",
+      "latitude": 19.078,
+      "longitude": 72.9995,
+      "service_area_id": null,
+      "building_id": null,
+      "qr_public_token": "qr-ebf79463e4c6",
+      "qr_active": false,
+      "capacity_liters": 240,
+      "fill_level_percentage": 0,
+      "is_active": true,
+      "created_at": "2026-10-10T02:33:29.713305+00:00",
+      "id": "ec5fbbcc-8b1c-4e02-ab6c-2f201dce88e0",
+      "qr_last_regenerated_at": "2026-10-10T02:33:29.781426+00:00",
+      "updated_at": "2026-10-10T02:33:29.844579+00:00"
     }
   },
   "vehicles": {
@@ -927,7 +966,7 @@
       "last_known_longitude": 72.9989,
       "is_active": true,
       "created_at": "2026-10-09T07:22:14.050176+00:00",
-      "updated_at": "2026-10-09T20:29:19.235509+00:00"
+      "updated_at": "2026-10-10T02:33:43.148033+00:00"
     },
     "f0000000-0000-0000-0000-000000000002": {
       "id": "f0000000-0000-0000-0000-000000000002",
@@ -1146,6 +1185,18 @@
       "created_at": "2026-10-09T20:29:05.149215+00:00",
       "id": "ea79c87c-f7cf-4338-b985-c630fad15e63",
       "updated_at": "2026-10-09T20:29:05.242576+00:00"
+    },
+    "14f6b2e0-c871-40d8-8470-cda7c6bab90e": {
+      "vehicle_number": "MH-43-TEST-EB70",
+      "vehicle_type": "COMPACTOR_TRUCK",
+      "capacity_kg": 4000.0,
+      "status": "INACTIVE",
+      "assigned_driver_id": null,
+      "maintenance_status": "SERVICED",
+      "is_active": false,
+      "created_at": "2026-10-10T02:33:27.509443+00:00",
+      "id": "14f6b2e0-c871-40d8-8470-cda7c6bab90e",
+      "updated_at": "2026-10-10T02:33:27.615763+00:00"
     }
   },
   "collection_schedules": {
@@ -1449,6 +1500,24 @@
       "created_at": "2026-10-09T20:29:11.115045+00:00",
       "id": "d60b3c5a-5815-46f1-b25c-6e7792f8bd1b",
       "updated_at": "2026-10-09T20:29:11.137088+00:00"
+    },
+    "5358e459-9650-470d-b7d4-579f1470bfe6": {
+      "title": "Ward 7 High-Density Morning Route",
+      "stop_type": "BUILDING",
+      "service_area_id": null,
+      "building_id": null,
+      "dustbin_id": null,
+      "weekday": 2,
+      "shift": "MORNING",
+      "start_window": "06:30:00",
+      "end_window": "09:30:00",
+      "service_duration_minutes": 20,
+      "vehicle_id": null,
+      "driver_id": null,
+      "is_active": false,
+      "created_at": "2026-10-10T02:33:33.711395+00:00",
+      "id": "5358e459-9650-470d-b7d4-579f1470bfe6",
+      "updated_at": "2026-10-10T02:33:33.730924+00:00"
     }
   },
   "collection_routes": {
@@ -3165,6 +3234,75 @@
       "published_at": null,
       "created_at": "2026-10-09T20:29:19.290005+00:00",
       "id": "98561ad8-cdef-452b-9dd1-9aa4eed14cec"
+    },
+    "8b15da70-a41b-4829-96f1-06967c674c85": {
+      "route_name": "Morning Test Route Rajesh",
+      "route_date": "2026-11-3d",
+      "shift": "MORNING",
+      "vehicle_id": "f0000000-0000-0000-0000-000000000001",
+      "driver_id": "d0000000-0000-0000-0000-000000000001",
+      "dumpyard_id": "b0000000-0000-0000-0000-000000000001",
+      "status": "IN_PROGRESS",
+      "version": 1,
+      "distance_meters": 0.0,
+      "duration_seconds": 0,
+      "geometry": [],
+      "published_at": "2026-10-10T02:33:40.933243+00:00",
+      "created_at": "2026-10-10T02:33:40.898173+00:00",
+      "id": "8b15da70-a41b-4829-96f1-06967c674c85",
+      "updated_at": "2026-10-10T02:33:41.005238+00:00",
+      "started_at": "2026-10-10T02:33:41.005227+00:00"
+    },
+    "545c4754-07ae-4a36-8917-e928a1e48a4d": {
+      "route_name": "Policy Test Route",
+      "route_date": "2026-12-0d",
+      "shift": "MORNING",
+      "vehicle_id": "f0000000-0000-0000-0000-000000000001",
+      "driver_id": "d0000000-0000-0000-0000-000000000001",
+      "dumpyard_id": "b0000000-0000-0000-0000-000000000001",
+      "status": "IN_PROGRESS",
+      "version": 1,
+      "distance_meters": 0.0,
+      "duration_seconds": 0,
+      "geometry": [],
+      "published_at": "2026-10-10T02:33:42.061135+00:00",
+      "created_at": "2026-10-10T02:33:41.961855+00:00",
+      "id": "545c4754-07ae-4a36-8917-e928a1e48a4d",
+      "updated_at": "2026-10-10T02:33:42.162056+00:00",
+      "started_at": "2026-10-10T02:33:42.162041+00:00"
+    },
+    "cf5afeff-49c0-4e53-a2e6-8a278c1c986b": {
+      "route_name": "Conflict Route 1",
+      "route_date": "2027-01-d4",
+      "shift": "MORNING",
+      "vehicle_id": "f0000000-0000-0000-0000-000000000001",
+      "driver_id": "d0000000-0000-0000-0000-000000000001",
+      "dumpyard_id": "b0000000-0000-0000-0000-000000000001",
+      "status": "PUBLISHED",
+      "version": 1,
+      "distance_meters": 0.0,
+      "duration_seconds": 0,
+      "geometry": [],
+      "published_at": "2026-10-10T02:33:43.121542+00:00",
+      "created_at": "2026-10-10T02:33:43.076394+00:00",
+      "id": "cf5afeff-49c0-4e53-a2e6-8a278c1c986b",
+      "updated_at": "2026-10-10T02:33:43.121557+00:00"
+    },
+    "1c851741-68e5-4a3a-a76b-5c0e2e828e12": {
+      "route_name": "Conflict Route 2",
+      "route_date": "2027-01-d4",
+      "shift": "MORNING",
+      "vehicle_id": "f0000000-0000-0000-0000-000000000001",
+      "driver_id": "d0000000-0000-0000-0000-000000000002",
+      "dumpyard_id": "b0000000-0000-0000-0000-000000000001",
+      "status": "DRAFT",
+      "version": 1,
+      "distance_meters": 0.0,
+      "duration_seconds": 0,
+      "geometry": [],
+      "published_at": null,
+      "created_at": "2026-10-10T02:33:43.226410+00:00",
+      "id": "1c851741-68e5-4a3a-a76b-5c0e2e828e12"
     }
   },
   "route_stops": {
@@ -4101,6 +4239,42 @@
       "id": "028cf1e4-68f9-4957-ad06-56a00007b7d6",
       "created_at": "2026-10-09T20:29:18.407089+00:00",
       "updated_at": "2026-10-09T20:29:18.581316+00:00"
+    },
+    "c9755435-5ea4-465f-9d3c-517dc1c955bd": {
+      "route_id": "545c4754-07ae-4a36-8917-e928a1e48a4d",
+      "sequence_number": 1,
+      "stop_type": "BUILDING",
+      "building_id": "10000000-0000-0000-0000-000000000001",
+      "dustbin_id": null,
+      "report_id": null,
+      "scheduled_window": "07:00 - 07:30",
+      "status": "COMPLETED",
+      "photo_required": false,
+      "is_locked": false,
+      "started_at": "2026-10-10T02:33:42.216081+00:00",
+      "completed_at": "2026-10-10T02:33:42.243432+00:00",
+      "exception_reason": null,
+      "id": "c9755435-5ea4-465f-9d3c-517dc1c955bd",
+      "created_at": "2026-10-10T02:33:42.004701+00:00",
+      "updated_at": "2026-10-10T02:33:42.243446+00:00"
+    },
+    "6d2dae45-c0e7-43ec-be11-549cbbaef063": {
+      "route_id": "545c4754-07ae-4a36-8917-e928a1e48a4d",
+      "sequence_number": 2,
+      "stop_type": "COMPLAINT_REPORT",
+      "building_id": "10000000-0000-0000-0000-000000000002",
+      "dustbin_id": null,
+      "report_id": null,
+      "scheduled_window": "07:00 - 07:30",
+      "status": "STARTED",
+      "photo_required": true,
+      "is_locked": false,
+      "started_at": "2026-10-10T02:33:42.270886+00:00",
+      "completed_at": null,
+      "exception_reason": null,
+      "id": "6d2dae45-c0e7-43ec-be11-549cbbaef063",
+      "created_at": "2026-10-10T02:33:42.033226+00:00",
+      "updated_at": "2026-10-10T02:33:42.270900+00:00"
     }
   },
   "waste_reports": {
@@ -7782,6 +7956,311 @@
       "reopened_at": "2026-10-09T20:29:29.898947+00:00",
       "unresolved_alert": true,
       "updated_at": "2026-10-09T20:29:29.926911+00:00"
+    },
+    "a2011af2-6fd0-4bcd-96be-b5b17df97ec5": {
+      "id": "a2011af2-6fd0-4bcd-96be-b5b17df97ec5",
+      "report_number": "REP-2026-0132",
+      "report_type": "OVERFLOWING_BIN",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": null,
+      "anonymous_token_hash": "5fb7d55b07f328b8eca4c0e639f572b26470dc7778ed4b871b5ffe9c5e29a827",
+      "tracking_token": "HJ2AgBcKoZdQ02IAlxG4uwGNyNjumrWr",
+      "tracking_token_display": "TRK-0132",
+      "reporter_contact_masked": null,
+      "latitude": 19.0765,
+      "longitude": 72.998,
+      "address_text": "GPS Pin Location",
+      "description": "Urgent commercial waste test 0ac1a9",
+      "status": "SUBMITTED",
+      "priority": "MEDIUM",
+      "priority_suggested_by_ai": null,
+      "assigned_driver_id": null,
+      "assigned_vehicle_id": null,
+      "photo_required": true,
+      "rejection_reason": null,
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:30.773575+00:00"
+    },
+    "1e2d27ee-6e32-4dc7-a2f2-88635c668062": {
+      "id": "1e2d27ee-6e32-4dc7-a2f2-88635c668062",
+      "report_number": "REP-2026-0133",
+      "report_type": "NO_BIN_GARBAGE",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": null,
+      "anonymous_token_hash": "c29ee63a55dc13b0ea8487ad92ec6a49e188b0b947617d6bebc39b25226b0632",
+      "tracking_token": "Gmdyt1U7uJCjcwURTtDqyzhmMIKBoC_Q",
+      "tracking_token_display": "TRK-0133",
+      "reporter_contact_masked": null,
+      "latitude": 19.076,
+      "longitude": 72.9975,
+      "address_text": "GPS Pin Location",
+      "description": "Transition validation report",
+      "status": "PENDING_REVIEW",
+      "priority": "MEDIUM",
+      "priority_suggested_by_ai": null,
+      "assigned_driver_id": null,
+      "assigned_vehicle_id": null,
+      "photo_required": true,
+      "rejection_reason": "Not in municipal municipal boundary jurisdiction.",
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:31.446659+00:00",
+      "status_transition_reason": "Citizen confirmed jurisdiction error was rectified.",
+      "updated_at": "2026-10-10T02:33:31.524899+00:00",
+      "reopen_reason": "Citizen confirmed jurisdiction error was rectified."
+    },
+    "d1d25b1a-1907-4945-a202-940c5f2f49ca": {
+      "id": "d1d25b1a-1907-4945-a202-940c5f2f49ca",
+      "report_number": "REP-2026-0134",
+      "report_type": "PLASTIC",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": null,
+      "anonymous_token_hash": "5ed07d4b11ea2bc366a8820794eb796fd755f284fa86626d61a928059034cc8a",
+      "tracking_token": "E13Gic8LmD1f_lhDdlteLvxyNhlFE8If",
+      "tracking_token_display": "TRK-0134",
+      "reporter_contact_masked": null,
+      "latitude": 19.076,
+      "longitude": 72.9975,
+      "address_text": "GPS Pin Location",
+      "description": "Waiting queue validation",
+      "status": "ASSIGNED",
+      "priority": "HIGH",
+      "priority_suggested_by_ai": null,
+      "assigned_driver_id": "d0000000-0000-0000-0000-000000000001",
+      "assigned_vehicle_id": "f0000000-0000-0000-0000-000000000001",
+      "photo_required": true,
+      "rejection_reason": null,
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:32.165385+00:00",
+      "updated_at": "2026-10-10T02:33:33.079769+00:00",
+      "waiting_since": "2026-10-10T02:33:32.230556+00:00",
+      "assigned_at": "2026-10-10T02:33:32.312876+00:00",
+      "ai_overridden": true,
+      "ai_override_reason": "Verified by Admin: High density polyethylene containers",
+      "ai_overridden_by": "a0000000-0000-0000-0000-000000000001",
+      "ai_overridden_at": "2026-10-10T02:33:33.079734+00:00",
+      "original_ai_category": "SCATTERED_WASTE",
+      "original_ai_confidence": null
+    },
+    "147ddef6-e15b-4fec-85b2-736d4ceaaf0a": {
+      "id": "147ddef6-e15b-4fec-85b2-736d4ceaaf0a",
+      "report_number": "REP-2026-0135",
+      "report_type": "HAZARDOUS",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": null,
+      "anonymous_token_hash": "bd5757752caece8a58db4312f8a35c8da3b2afb2f25d1131cd10e44ba5611098",
+      "tracking_token": "We6hpfbsLHcs664g6jiMCd14Z1YyHplK",
+      "tracking_token_display": "TRK-0135",
+      "reporter_contact_masked": null,
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "address_text": "Bandra Kurla Complex Block C",
+      "description": "Metal and electronic waste dumped outside bin.",
+      "status": "PENDING_REVIEW",
+      "priority": "URGENT",
+      "priority_suggested_by_ai": "LOW",
+      "assigned_driver_id": null,
+      "assigned_vehicle_id": null,
+      "photo_required": true,
+      "rejection_reason": null,
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:36.785419+00:00",
+      "triage_queue": "GENERAL_COMPACTOR",
+      "is_potential_duplicate": true,
+      "duplicate_candidate_count": 19,
+      "duplicate_candidates": [
+        {
+          "matched_report_id": "43840d15-572d-4de4-bb3b-17d0281c35ce",
+          "matched_report_number": "REP-2026-0125",
+          "matched_status": "PENDING_REVIEW",
+          "distance_meters": 0.0,
+          "hours_difference": 6.1,
+          "similarity_score": 0.878,
+          "explanation": "Within 0m and filed 6.1h apart for same/similar issue."
+        },
+        {
+          "matched_report_id": "daee1fe3-b5a9-4cd4-9b7d-3bdba0265de5",
+          "matched_report_number": "REP-2026-0102",
+          "matched_status": "PENDING_REVIEW",
+          "distance_meters": 0.0,
+          "hours_difference": 6.3,
+          "similarity_score": 0.877,
+          "explanation": "Within 0m and filed 6.3h apart for same/similar issue."
+        },
+        {
+          "matched_report_id": "72c58dde-2d20-4f81-8c35-16b5057e44e6",
+          "matched_report_number": "REP-2026-0106",
+          "matched_status": "PENDING_REVIEW",
+          "distance_meters": 0.0,
+          "hours_difference": 6.3,
+          "similarity_score": 0.877,
+          "explanation": "Within 0m and filed 6.3h apart for same/similar issue."
+        }
+      ],
+      "ai_overridden": true,
+      "ai_override_reason": "Supervisor confirmed chemical and battery waste on site requiring hazmat protocol.",
+      "ai_overridden_by": "a0000000-0000-0000-0000-000000000001",
+      "ai_overridden_at": "2026-10-10T02:33:36.909891+00:00",
+      "original_ai_category": "UNKNOWN",
+      "original_ai_confidence": 0.15,
+      "updated_at": "2026-10-10T02:33:36.936133+00:00"
+    },
+    "41c960d8-e8d4-418b-82df-7e04bed1a5c4": {
+      "id": "41c960d8-e8d4-418b-82df-7e04bed1a5c4",
+      "report_number": "REP-2026-0136",
+      "report_type": "NO_BIN_GARBAGE",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": null,
+      "anonymous_token_hash": "aab757c7b50b04670ccb32e0913af68dc77113ba26225259951113034c2386d5",
+      "tracking_token": "1tXFG0QyqhMk-nIpqcZfntEafV4yTsRh",
+      "tracking_token_display": "TRK-0136",
+      "reporter_contact_masked": null,
+      "latitude": 19.0765,
+      "longitude": 72.998,
+      "address_text": "Near Station Road Bus Stop",
+      "description": "Scattered plastic bottles and food boxes.",
+      "status": "SUBMITTED",
+      "priority": "MEDIUM",
+      "priority_suggested_by_ai": null,
+      "assigned_driver_id": null,
+      "assigned_vehicle_id": null,
+      "photo_required": true,
+      "rejection_reason": null,
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:42.363500+00:00"
+    },
+    "6c49ccc5-e44f-4711-979e-43d0ba3a1d97": {
+      "id": "6c49ccc5-e44f-4711-979e-43d0ba3a1d97",
+      "report_number": "REP-2026-0137",
+      "report_type": "NO_BIN_GARBAGE",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": null,
+      "anonymous_token_hash": "9930c151030dd43e2493755a17e879b7fc4e1f89afc19e1da0852930866e527b",
+      "tracking_token": "ShY7Ax1fYu0QkSdFuPyW3mn8af1cUVe-",
+      "tracking_token_display": "TRK-0137",
+      "reporter_contact_masked": null,
+      "latitude": 19.0765,
+      "longitude": 72.998,
+      "address_text": "Sector 4 Vashi Waste Point",
+      "description": "Garbage pile near roadside",
+      "status": "SUBMITTED",
+      "priority": "MEDIUM",
+      "priority_suggested_by_ai": null,
+      "assigned_driver_id": null,
+      "assigned_vehicle_id": null,
+      "photo_required": true,
+      "rejection_reason": null,
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:53.261288+00:00"
+    },
+    "9d1cf197-bf64-4ab3-9ea4-cb59478c717d": {
+      "id": "9d1cf197-bf64-4ab3-9ea4-cb59478c717d",
+      "report_number": "REP-2026-0138",
+      "report_type": "OVERFLOWING_BIN",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": null,
+      "anonymous_token_hash": "268ec0f1195686e4f60780c6e3075f7a36541d7a684f088d259b102a7e19cb6b",
+      "tracking_token": "oyk669Sv3WmBfCSj-4NBa9dQ2UEQVGIj",
+      "tracking_token_display": "TRK-0138",
+      "reporter_contact_masked": "***3210",
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "address_text": "Bandra West Promenade Near Gate 3",
+      "description": "Bin is overflowing with municipal food waste and cartons.",
+      "status": "SUBMITTED",
+      "priority": "MEDIUM",
+      "priority_suggested_by_ai": null,
+      "assigned_driver_id": null,
+      "assigned_vehicle_id": null,
+      "photo_required": true,
+      "rejection_reason": null,
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:54.164506+00:00"
+    },
+    "69aa1771-0113-452d-9e64-4199931a1634": {
+      "id": "69aa1771-0113-452d-9e64-4199931a1634",
+      "report_number": "REP-2026-0139",
+      "report_type": "SCATTERED_WASTE",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": null,
+      "anonymous_token_hash": "49bbb6f03a65f88698721cbc6946816a745107d4b766502b9364fc606eee313b",
+      "tracking_token": "iP-4RU1FCxeXieu77_-7eQ1BS16I99g6",
+      "tracking_token_display": "TRK-0139",
+      "reporter_contact_masked": null,
+      "latitude": 19.1136,
+      "longitude": 72.8697,
+      "address_text": "Andheri East Station Road",
+      "description": "Construction debris and plastic bags scattered on walkway.",
+      "status": "SUBMITTED",
+      "priority": "MEDIUM",
+      "priority_suggested_by_ai": null,
+      "assigned_driver_id": null,
+      "assigned_vehicle_id": null,
+      "photo_required": true,
+      "rejection_reason": null,
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:54.256730+00:00"
+    },
+    "aad72517-6597-465a-bbfd-c97bdb36d5a9": {
+      "id": "aad72517-6597-465a-bbfd-c97bdb36d5a9",
+      "report_number": "REP-2026-0140",
+      "report_type": "MISSED_COLLECTION",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": "c0000000-0000-0000-0000-000000000002",
+      "anonymous_token_hash": "70cda10c3054796a71f67610256e3663a128a94b112336384f4511498c843f1f",
+      "tracking_token": "Bkw0vuJwRgMMAfZrr3LPfTM3sFYh6s7z",
+      "tracking_token_display": "TRK-0140",
+      "reporter_contact_masked": null,
+      "latitude": 19.055,
+      "longitude": 72.83,
+      "address_text": "Shivaji Park Seaface Lane 4",
+      "description": "Morning scheduled bin truck missed society building.",
+      "status": "SUBMITTED",
+      "priority": "MEDIUM",
+      "priority_suggested_by_ai": null,
+      "assigned_driver_id": null,
+      "assigned_vehicle_id": null,
+      "photo_required": true,
+      "rejection_reason": null,
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:54.902884+00:00"
+    },
+    "60960d36-ea24-4159-a3c2-68df01a8ff40": {
+      "id": "60960d36-ea24-4159-a3c2-68df01a8ff40",
+      "report_number": "REP-2026-0141",
+      "report_type": "ILLEGAL_DUMPING",
+      "dustbin_id": null,
+      "building_id": null,
+      "reporter_id": null,
+      "anonymous_token_hash": "cd604080c91aa54b802ae69648fca5ab20d20e0795a371d342e3974f182feb86",
+      "tracking_token": "uTAdqiNr9KmUXrBoZjewSwI7snSNaaMP",
+      "tracking_token_display": "TRK-0141",
+      "reporter_contact_masked": null,
+      "latitude": 19.08,
+      "longitude": 72.89,
+      "address_text": "Ghatkopar Industrial Zone Backroad",
+      "description": "Commercial waste dumped near storm drain.",
+      "status": "REOPENED",
+      "priority": "MEDIUM",
+      "priority_suggested_by_ai": null,
+      "assigned_driver_id": null,
+      "assigned_vehicle_id": null,
+      "photo_required": true,
+      "rejection_reason": null,
+      "admin_notes": null,
+      "created_at": "2026-10-10T02:33:55.045174+00:00",
+      "reopen_reason": "Vehicle collected small bags but left behind industrial chemical containers.",
+      "reopened_at": "2026-10-10T02:33:55.071988+00:00",
+      "unresolved_alert": true,
+      "updated_at": "2026-10-10T02:33:55.094897+00:00"
     }
   },
   "report_images": {
@@ -7874,6 +8353,15 @@
       "upload_status": "COMPLETED",
       "id": "a5375624-4654-4a80-bdf7-fd21263d0a72",
       "created_at": "2026-10-09T20:29:13.977392+00:00"
+    },
+    "f787083e-2e58-4e1a-bd2b-b77989fa233a": {
+      "report_id": "147ddef6-e15b-4fec-85b2-736d4ceaaf0a",
+      "cloudinary_asset_id": "waste_img_40383cd86c44",
+      "secure_url": "data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
+      "image_role": "ORIGINAL_REPORT",
+      "upload_status": "COMPLETED",
+      "id": "f787083e-2e58-4e1a-bd2b-b77989fa233a",
+      "created_at": "2026-10-10T02:33:36.786543+00:00"
     }
   },
   "ai_analyses": {
@@ -8416,6 +8904,66 @@
       "overridden_by": "a0000000-0000-0000-0000-000000000001",
       "overridden_at": "2026-10-09T20:29:14.043670+00:00",
       "updated_at": "2026-10-09T20:29:14.043693+00:00"
+    },
+    "e134cd39-c8a0-45b6-bf1b-0203bd9af1b5": {
+      "report_id": "147ddef6-e15b-4fec-85b2-736d4ceaaf0a",
+      "image_id": "f787083e-2e58-4e1a-bd2b-b77989fa233a",
+      "analysis_type": "WASTE_CLASSIFICATION",
+      "model_name": "EcoVision-WasteNet",
+      "model_version": "v3.0-mobilenetv3-small",
+      "result": {
+        "quality": {
+          "dimensions": "1x1",
+          "mean_luminance": 0.0,
+          "sharpness_score": 0.0,
+          "too_dark": true,
+          "too_bright": false,
+          "blurry": true,
+          "is_uniform_or_blank": true
+        },
+        "primary_category": "UNKNOWN",
+        "category_probabilities": {
+          "ORGANIC": 0.167,
+          "PLASTIC": 0.167,
+          "PAPER": 0.167,
+          "METAL": 0.167,
+          "GLASS": 0.167,
+          "HAZARDOUS": 0.167
+        },
+        "fill_level_percentage": null,
+        "fill_state": "UNCERTAIN",
+        "is_overflowing": false,
+        "recommended_priority": "LOW",
+        "priority_score": 15.0,
+        "triage_queue": "GENERAL_COMPACTOR",
+        "scoring_factors": {
+          "standard_waste": {
+            "points": 8.0,
+            "reason": "Standard recyclable or dry waste"
+          },
+          "sla_age": {
+            "points": 2.0,
+            "reason": "Pending for 0.0 hours without collection"
+          },
+          "residential_location": {
+            "points": 5.0,
+            "reason": "Standard residential or commercial street"
+          }
+        },
+        "analysis_notes": "Classified as UNKNOWN (15% confidence). Image resolution too low for container fill segmentation."
+      },
+      "confidence": 0.15,
+      "status": "NEEDS_HUMAN_REVIEW",
+      "error_message": null,
+      "id": "e134cd39-c8a0-45b6-bf1b-0203bd9af1b5",
+      "created_at": "2026-10-10T02:33:36.852973+00:00",
+      "is_overridden": true,
+      "overridden_category": "HAZARDOUS",
+      "overridden_priority": "URGENT",
+      "override_reason": "Supervisor confirmed chemical and battery waste on site requiring hazmat protocol.",
+      "overridden_by": "a0000000-0000-0000-0000-000000000001",
+      "overridden_at": "2026-10-10T02:33:36.909891+00:00",
+      "updated_at": "2026-10-10T02:33:36.909924+00:00"
     }
   },
   "driver_assignments": {
@@ -8594,6 +9142,17 @@
       "notes": "Dispatch for Report REP-2026-0124",
       "id": "ecd32181-3e61-4442-8789-81fd7021f7b0",
       "created_at": "2026-10-09T20:29:09.753569+00:00"
+    },
+    "2b1bbc99-499d-435a-bd6e-d620b402aaaa": {
+      "report_id": "d1d25b1a-1907-4945-a202-940c5f2f49ca",
+      "driver_id": "d0000000-0000-0000-0000-000000000001",
+      "vehicle_id": "f0000000-0000-0000-0000-000000000001",
+      "assigned_by": "a0000000-0000-0000-0000-000000000001",
+      "assigned_at": "2026-10-10T02:33:32.339088+00:00",
+      "status": "ACTIVE",
+      "notes": "Dispatch for Report REP-2026-0134",
+      "id": "2b1bbc99-499d-435a-bd6e-d620b402aaaa",
+      "created_at": "2026-10-10T02:33:32.339139+00:00"
     }
   },
   "collection_proofs": {},
@@ -9906,8 +10465,9 @@
       "type": "SYSTEM",
       "report_id": null,
       "route_id": null,
-      "read_at": null,
-      "created_at": "2026-10-09T20:29:24.992211+00:00"
+      "read_at": "2026-10-10T02:33:48.434586+00:00",
+      "created_at": "2026-10-09T20:29:24.992211+00:00",
+      "updated_at": "2026-10-10T02:33:48.434675+00:00"
     },
     "10a78f22-434d-4a12-9999-9b82b82b2fc4": {
       "id": "10a78f22-434d-4a12-9999-9b82b82b2fc4",
@@ -9931,6 +10491,88 @@
       "route_id": null,
       "read_at": null,
       "created_at": "2026-10-09T20:29:29.982516+00:00"
+    },
+    "5c8b843e-9e3a-4445-a7ee-a5007b095f66": {
+      "id": "5c8b843e-9e3a-4445-a7ee-a5007b095f66",
+      "user_id": "d0000000-0000-0000-0000-000000000001",
+      "title": "New Waste Collection Assigned",
+      "message": "You have been assigned to collect Report REP-2026-0134 at GPS Pin Location.",
+      "type": "TASK_ASSIGNED",
+      "report_id": null,
+      "route_id": null,
+      "read_at": "2026-10-10T02:33:48.434586+00:00",
+      "created_at": "2026-10-10T02:33:32.365989+00:00",
+      "updated_at": "2026-10-10T02:33:48.461540+00:00"
+    },
+    "dc58b569-b36e-4440-9e11-9a57c27aca53": {
+      "id": "dc58b569-b36e-4440-9e11-9a57c27aca53",
+      "user_id": "d0000000-0000-0000-0000-000000000001",
+      "title": "New Route Assigned",
+      "message": "You have been assigned to route 'Morning Test Route Rajesh' for 2026-11-3d (MORNING shift).",
+      "type": "ROUTE_PUBLISHED",
+      "report_id": null,
+      "route_id": "8b15da70-a41b-4829-96f1-06967c674c85",
+      "read_at": "2026-10-10T02:33:48.434586+00:00",
+      "created_at": "2026-10-10T02:33:40.969037+00:00",
+      "updated_at": "2026-10-10T02:33:48.489016+00:00"
+    },
+    "e15d7fe1-8ea6-4650-a739-8338a4222aca": {
+      "id": "e15d7fe1-8ea6-4650-a739-8338a4222aca",
+      "user_id": "d0000000-0000-0000-0000-000000000001",
+      "title": "New Route Assigned",
+      "message": "You have been assigned to route 'Policy Test Route' for 2026-12-0d (MORNING shift).",
+      "type": "ROUTE_PUBLISHED",
+      "report_id": null,
+      "route_id": "545c4754-07ae-4a36-8917-e928a1e48a4d",
+      "read_at": "2026-10-10T02:33:48.434586+00:00",
+      "created_at": "2026-10-10T02:33:42.112788+00:00",
+      "updated_at": "2026-10-10T02:33:48.516040+00:00"
+    },
+    "aa2d22b6-aa6b-4736-a9a3-8d9e5d25f16c": {
+      "id": "aa2d22b6-aa6b-4736-a9a3-8d9e5d25f16c",
+      "user_id": "d0000000-0000-0000-0000-000000000001",
+      "title": "New Route Assigned",
+      "message": "You have been assigned to route 'Conflict Route 1' for 2027-01-d4 (MORNING shift).",
+      "type": "ROUTE_PUBLISHED",
+      "report_id": null,
+      "route_id": "cf5afeff-49c0-4e53-a2e6-8a278c1c986b",
+      "read_at": "2026-10-10T02:33:48.434586+00:00",
+      "created_at": "2026-10-10T02:33:43.174141+00:00",
+      "updated_at": "2026-10-10T02:33:48.544000+00:00"
+    },
+    "8640655b-4cd3-4511-832b-c6be9d3699bb": {
+      "id": "8640655b-4cd3-4511-832b-c6be9d3699bb",
+      "user_id": "d0000000-0000-0000-0000-000000000001",
+      "title": "Dispatch Response: Road dug up near Sector 4 Gate",
+      "message": "Admin updated ticket status to RESOLVED: Dispatched field officer. Please bypass Gate 2 and take Rear Service Lane.",
+      "type": "SYSTEM",
+      "report_id": null,
+      "route_id": null,
+      "read_at": null,
+      "created_at": "2026-10-10T02:33:49.934079+00:00"
+    },
+    "c567fd34-832a-4ef7-9ce5-03473197ff93": {
+      "id": "c567fd34-832a-4ef7-9ce5-03473197ff93",
+      "user_id": "c0000000-0000-0000-0000-000000000002",
+      "title": "Sanitation Request Received",
+      "message": "Request REP-2026-0140 has been logged for municipal inspection.",
+      "type": "REPORT_STATUS",
+      "report_id": "aad72517-6597-465a-bbfd-c97bdb36d5a9",
+      "route_id": null,
+      "read_at": "2026-10-10T02:33:54.958361+00:00",
+      "created_at": "2026-10-10T02:33:54.928185+00:00",
+      "updated_at": "2026-10-10T02:33:54.958375+00:00"
+    },
+    "e81cce43-bb09-457c-96af-2ca7b629cf76": {
+      "id": "e81cce43-bb09-457c-96af-2ca7b629cf76",
+      "user_id": "a0000000-0000-0000-0000-000000000001",
+      "title": "Report Reopened: REP-2026-0141",
+      "message": "Resident reported collection still unresolved: 'Vehicle collected small bags but left behind industrial chemical containers...'",
+      "type": "REPORT_UNRESOLVED",
+      "report_id": "60960d36-ea24-4159-a3c2-68df01a8ff40",
+      "route_id": null,
+      "read_at": null,
+      "created_at": "2026-10-10T02:33:55.149896+00:00"
     }
   },
   "audit_logs": {
@@ -15220,6 +15862,311 @@
       },
       "id": "1034dd43-d515-4ef7-b8ac-f2bcc524de28",
       "created_at": "2026-10-09T20:29:29.954646+00:00"
+    },
+    "e3897bd3-fca6-45c5-bcab-735445faffeb": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "CREATE_VEHICLE",
+      "entity_type": "vehicles",
+      "entity_id": "14f6b2e0-c871-40d8-8470-cda7c6bab90e",
+      "safe_metadata": {
+        "vehicle_number": "MH-43-TEST-EB70",
+        "capacity_kg": 3500.0
+      },
+      "id": "e3897bd3-fca6-45c5-bcab-735445faffeb",
+      "created_at": "2026-10-10T02:33:27.534466+00:00"
+    },
+    "a8924413-35c3-46ce-80e7-e1e42ddbaeae": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "UPDATE_VEHICLE",
+      "entity_type": "vehicles",
+      "entity_id": "14f6b2e0-c871-40d8-8470-cda7c6bab90e",
+      "safe_metadata": {
+        "capacity_kg": 4000.0,
+        "maintenance_status": "SERVICED"
+      },
+      "id": "a8924413-35c3-46ce-80e7-e1e42ddbaeae",
+      "created_at": "2026-10-10T02:33:27.589176+00:00"
+    },
+    "4ed04ffc-4355-4d41-be21-95c1ab2a81b7": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "ARCHIVE_VEHICLE",
+      "entity_type": "vehicles",
+      "entity_id": "14f6b2e0-c871-40d8-8470-cda7c6bab90e",
+      "safe_metadata": {
+        "vehicle_number": "MH-43-TEST-EB70"
+      },
+      "id": "4ed04ffc-4355-4d41-be21-95c1ab2a81b7",
+      "created_at": "2026-10-10T02:33:27.640849+00:00"
+    },
+    "f3b2b490-9bda-4623-995b-a04e4683840a": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "CREATE_DRIVER",
+      "entity_type": "profiles",
+      "entity_id": "74686bb4-1c7f-4482-8747-60833f38064f",
+      "safe_metadata": {
+        "email": "driver.7e6504@smartwaste.gov",
+        "full_name": "Ramesh K. Jadhav",
+        "phone": "+91 98200 88991"
+      },
+      "id": "f3b2b490-9bda-4623-995b-a04e4683840a",
+      "created_at": "2026-10-10T02:33:28.882321+00:00"
+    },
+    "e5fdd872-e958-4e27-9f04-7a54ed937db0": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "UPDATE_DRIVER",
+      "entity_type": "profiles",
+      "entity_id": "74686bb4-1c7f-4482-8747-60833f38064f",
+      "safe_metadata": {
+        "phone": "+91 98200 99999"
+      },
+      "id": "e5fdd872-e958-4e27-9f04-7a54ed937db0",
+      "created_at": "2026-10-10T02:33:28.934243+00:00"
+    },
+    "5d605371-a440-4484-b30f-e9b0d96cfe5a": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "ARCHIVE_DRIVER",
+      "entity_type": "profiles",
+      "entity_id": "74686bb4-1c7f-4482-8747-60833f38064f",
+      "safe_metadata": {
+        "full_name": "Ramesh K. Jadhav"
+      },
+      "id": "5d605371-a440-4484-b30f-e9b0d96cfe5a",
+      "created_at": "2026-10-10T02:33:28.980754+00:00"
+    },
+    "932920de-c5da-4b26-94b3-f954c56be9cf": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "REGENERATE_DUSTBIN_QR",
+      "entity_type": "dustbins",
+      "entity_id": "ec5fbbcc-8b1c-4e02-ab6c-2f201dce88e0",
+      "safe_metadata": {
+        "bin_code": "BIN-TEST-7657",
+        "old_token": "qr-42a43a4d9f63",
+        "new_token": "qr-ebf79463e4c6"
+      },
+      "id": "932920de-c5da-4b26-94b3-f954c56be9cf",
+      "created_at": "2026-10-10T02:33:29.808232+00:00"
+    },
+    "87e2f2fa-02fd-4b7b-bec2-165a4f859308": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "REPORT_TRANSITION_REJECTED",
+      "entity_type": "waste_reports",
+      "entity_id": "1e2d27ee-6e32-4dc7-a2f2-88635c668062",
+      "safe_metadata": {
+        "previous_status": "SUBMITTED",
+        "new_status": "REJECTED",
+        "reason": "Not in municipal municipal boundary jurisdiction.",
+        "priority": "MEDIUM"
+      },
+      "id": "87e2f2fa-02fd-4b7b-bec2-165a4f859308",
+      "created_at": "2026-10-10T02:33:31.497498+00:00"
+    },
+    "31ec563b-6867-4f47-8565-62cbd26312e7": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "REPORT_TRANSITION_REOPENED",
+      "entity_type": "waste_reports",
+      "entity_id": "1e2d27ee-6e32-4dc7-a2f2-88635c668062",
+      "safe_metadata": {
+        "previous_status": "REJECTED",
+        "new_status": "PENDING_REVIEW",
+        "reason": "Citizen confirmed jurisdiction error was rectified.",
+        "priority": "MEDIUM"
+      },
+      "id": "31ec563b-6867-4f47-8565-62cbd26312e7",
+      "created_at": "2026-10-10T02:33:31.552420+00:00"
+    },
+    "513fb21a-10e1-420c-91a7-c1a8824d6c37": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "REPORT_TRANSITION_APPROVED",
+      "entity_type": "waste_reports",
+      "entity_id": "d1d25b1a-1907-4945-a202-940c5f2f49ca",
+      "safe_metadata": {
+        "previous_status": "SUBMITTED",
+        "new_status": "APPROVED",
+        "reason": "",
+        "priority": "MEDIUM"
+      },
+      "id": "513fb21a-10e1-420c-91a7-c1a8824d6c37",
+      "created_at": "2026-10-10T02:33:32.209504+00:00"
+    },
+    "336fcfb5-58f8-4238-b7ed-0c63dbdb0391": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "REPORT_QUEUED_WAITING_FOR_VEHICLE",
+      "entity_type": "waste_reports",
+      "entity_id": "d1d25b1a-1907-4945-a202-940c5f2f49ca",
+      "safe_metadata": {
+        "reason": "No vehicle or driver immediately available."
+      },
+      "id": "336fcfb5-58f8-4238-b7ed-0c63dbdb0391",
+      "created_at": "2026-10-10T02:33:32.256927+00:00"
+    },
+    "e2007692-c68f-4d7a-922a-7344045e8472": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "ASSIGN_REPORT_CREW",
+      "entity_type": "waste_reports",
+      "entity_id": "d1d25b1a-1907-4945-a202-940c5f2f49ca",
+      "safe_metadata": {
+        "vehicle_number": "MH-43-AZ-1001",
+        "driver_name": "Rajesh K. Pawar (Driver)"
+      },
+      "id": "e2007692-c68f-4d7a-922a-7344045e8472",
+      "created_at": "2026-10-10T02:33:32.391251+00:00"
+    },
+    "01e598fc-52be-4d25-97d2-5154ccc41a07": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "ADMIN_OVERRIDE_AI",
+      "entity_type": "waste_reports",
+      "entity_id": "d1d25b1a-1907-4945-a202-940c5f2f49ca",
+      "safe_metadata": {
+        "report_number": "REP-2026-0134",
+        "original_category": "SCATTERED_WASTE",
+        "new_category": "PLASTIC",
+        "original_priority": "MEDIUM",
+        "new_priority": "HIGH",
+        "reason": "Verified by Admin: High density polyethylene containers"
+      },
+      "id": "01e598fc-52be-4d25-97d2-5154ccc41a07",
+      "created_at": "2026-10-10T02:33:33.105719+00:00"
+    },
+    "00e12719-1094-47f0-8bec-6596f98e5bca": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "ADMIN_OVERRIDE_AI",
+      "entity_type": "waste_reports",
+      "entity_id": "147ddef6-e15b-4fec-85b2-736d4ceaaf0a",
+      "safe_metadata": {
+        "report_number": "REP-2026-0135",
+        "original_category": "UNKNOWN",
+        "new_category": "HAZARDOUS",
+        "original_priority": "LOW",
+        "new_priority": "URGENT",
+        "reason": "Supervisor confirmed chemical and battery waste on site requiring hazmat protocol."
+      },
+      "id": "00e12719-1094-47f0-8bec-6596f98e5bca",
+      "created_at": "2026-10-10T02:33:36.962303+00:00"
+    },
+    "f93711a4-41c3-495a-9a9a-cbe8e05490db": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "CREATE_ROUTE_DRAFT",
+      "entity_type": "collection_routes",
+      "entity_id": "8b15da70-a41b-4829-96f1-06967c674c85",
+      "safe_metadata": {
+        "route_name": "Morning Test Route Rajesh",
+        "date": "2026-11-3d",
+        "shift": "MORNING"
+      },
+      "id": "f93711a4-41c3-495a-9a9a-cbe8e05490db",
+      "created_at": "2026-10-10T02:33:40.915168+00:00"
+    },
+    "7660814d-ad1e-4d7c-8e8c-237d98bb8fb1": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "PUBLISH_ROUTE",
+      "entity_type": "collection_routes",
+      "entity_id": "8b15da70-a41b-4829-96f1-06967c674c85",
+      "safe_metadata": {
+        "driver_id": "d0000000-0000-0000-0000-000000000001",
+        "vehicle_id": "f0000000-0000-0000-0000-000000000001"
+      },
+      "id": "7660814d-ad1e-4d7c-8e8c-237d98bb8fb1",
+      "created_at": "2026-10-10T02:33:40.987183+00:00"
+    },
+    "d853a85e-b137-4f6f-a7dc-b7845740c1d4": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "CREATE_ROUTE_DRAFT",
+      "entity_type": "collection_routes",
+      "entity_id": "545c4754-07ae-4a36-8917-e928a1e48a4d",
+      "safe_metadata": {
+        "route_name": "Policy Test Route",
+        "date": "2026-12-0d",
+        "shift": "MORNING"
+      },
+      "id": "d853a85e-b137-4f6f-a7dc-b7845740c1d4",
+      "created_at": "2026-10-10T02:33:41.978677+00:00"
+    },
+    "e10c9d1b-009c-4452-b8b5-2846f5d7382e": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "PUBLISH_ROUTE",
+      "entity_type": "collection_routes",
+      "entity_id": "545c4754-07ae-4a36-8917-e928a1e48a4d",
+      "safe_metadata": {
+        "driver_id": "d0000000-0000-0000-0000-000000000001",
+        "vehicle_id": "f0000000-0000-0000-0000-000000000001"
+      },
+      "id": "e10c9d1b-009c-4452-b8b5-2846f5d7382e",
+      "created_at": "2026-10-10T02:33:42.135122+00:00"
+    },
+    "f70bc9cd-59f9-41d1-99c7-de6f5eba63a5": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "CREATE_ROUTE_DRAFT",
+      "entity_type": "collection_routes",
+      "entity_id": "cf5afeff-49c0-4e53-a2e6-8a278c1c986b",
+      "safe_metadata": {
+        "route_name": "Conflict Route 1",
+        "date": "2027-01-d4",
+        "shift": "MORNING"
+      },
+      "id": "f70bc9cd-59f9-41d1-99c7-de6f5eba63a5",
+      "created_at": "2026-10-10T02:33:43.098369+00:00"
+    },
+    "3c88e98b-810a-41c1-b053-de1dfce4c116": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "PUBLISH_ROUTE",
+      "entity_type": "collection_routes",
+      "entity_id": "cf5afeff-49c0-4e53-a2e6-8a278c1c986b",
+      "safe_metadata": {
+        "driver_id": "d0000000-0000-0000-0000-000000000001",
+        "vehicle_id": "f0000000-0000-0000-0000-000000000001"
+      },
+      "id": "3c88e98b-810a-41c1-b053-de1dfce4c116",
+      "created_at": "2026-10-10T02:33:43.199230+00:00"
+    },
+    "7c91f1ab-ad23-44bb-8f3d-860555882efa": {
+      "actor_id": "a0000000-0000-0000-0000-000000000001",
+      "action": "CREATE_ROUTE_DRAFT",
+      "entity_type": "collection_routes",
+      "entity_id": "1c851741-68e5-4a3a-a76b-5c0e2e828e12",
+      "safe_metadata": {
+        "route_name": "Conflict Route 2",
+        "date": "2027-01-d4",
+        "shift": "MORNING"
+      },
+      "id": "7c91f1ab-ad23-44bb-8f3d-860555882efa",
+      "created_at": "2026-10-10T02:33:43.253630+00:00"
+    },
+    "3b2245e0-fed2-403a-ac25-d703cabfbc3f": {
+      "id": "3b2245e0-fed2-403a-ac25-d703cabfbc3f",
+      "action": "DRIVER_ISSUE_SUBMITTED",
+      "entity_type": "driver_issues",
+      "entity_id": "d5477022-0f9a-4c33-880b-9415eb083d7e",
+      "performed_by": "d0000000-0000-0000-0000-000000000001",
+      "created_at": "2026-10-10T02:33:49.852736+00:00",
+      "safe_metadata": {
+        "category": "BLOCKED_ROAD",
+        "title": "Road dug up near Sector 4 Gate"
+      }
+    },
+    "54af6c08-ce68-4315-ba85-f56be4b9c119": {
+      "id": "54af6c08-ce68-4315-ba85-f56be4b9c119",
+      "action": "DRIVER_ISSUE_RESOLVED",
+      "entity_type": "driver_issues",
+      "entity_id": "d5477022-0f9a-4c33-880b-9415eb083d7e",
+      "performed_by": "a0000000-0000-0000-0000-000000000001",
+      "created_at": "2026-10-10T02:33:49.907536+00:00",
+      "safe_metadata": {
+        "status": "RESOLVED"
+      }
+    },
+    "01bad160-3575-4f43-8ff3-ffd3b166e71a": {
+      "actor_id": "ANONYMOUS_CITIZEN",
+      "action": "CITIZEN_REOPEN_REPORT",
+      "entity_type": "waste_reports",
+      "entity_id": "60960d36-ea24-4159-a3c2-68df01a8ff40",
+      "safe_metadata": {
+        "previous_status": "SUBMITTED",
+        "new_status": "REOPENED",
+        "citizen_reason": "Vehicle collected small bags but left behind industrial chemical containers.",
+        "has_evidence_photo": true
+      },
+      "id": "01bad160-3575-4f43-8ff3-ffd3b166e71a",
+      "created_at": "2026-10-10T02:33:55.121743+00:00"
     }
   },
   "route_optimization_runs": {},
@@ -15470,6 +16417,25 @@
       "resolved_at": "2026-10-09T20:29:24.971519+00:00",
       "created_at": "2026-10-09T20:29:24.885942+00:00",
       "updated_at": "2026-10-09T20:29:24.971569+00:00"
+    },
+    "d5477022-0f9a-4c33-880b-9415eb083d7e": {
+      "id": "d5477022-0f9a-4c33-880b-9415eb083d7e",
+      "driver_id": "d0000000-0000-0000-0000-000000000001",
+      "driver_name": "Rajesh K. Pawar (Driver)",
+      "vehicle_id": null,
+      "route_id": null,
+      "stop_id": null,
+      "category": "BLOCKED_ROAD",
+      "title": "Road dug up near Sector 4 Gate",
+      "description": "Construction trench blocks garbage truck entry to Building 12.",
+      "photo_url": null,
+      "priority": "HIGH",
+      "status": "RESOLVED",
+      "admin_response": "Dispatched field officer. Please bypass Gate 2 and take Rear Service Lane.",
+      "resolved_by": "a0000000-0000-0000-0000-000000000001",
+      "resolved_at": "2026-10-10T02:33:49.907536+00:00",
+      "created_at": "2026-10-10T02:33:49.852736+00:00",
+      "updated_at": "2026-10-10T02:33:49.907553+00:00"
     }
   },
   "vehicle_tracking_sessions": {
@@ -15802,6 +16768,28 @@
       "id": "d1e34627-bbb5-4704-85cf-a239e810d361",
       "created_at": "2026-10-09T20:29:26.655954+00:00",
       "updated_at": "2026-10-09T20:29:28.802469+00:00"
+    },
+    "3ba9611c-6a44-416d-8fba-5b3edf061ab2": {
+      "route_id": "309808a2-a4b7-48a5-9d5c-c0ba799f9bc6",
+      "driver_id": "d0000000-0000-0000-0000-000000000001",
+      "vehicle_id": "f0000000-0000-0000-0000-000000000001",
+      "status": "COMPLETED",
+      "current_latitude": 19.0765,
+      "current_longitude": 72.878,
+      "accuracy_meters": 6.2,
+      "heading": 145.0,
+      "speed_mps": 6.5,
+      "last_ping_at": "2026-10-10T02:33:52.525273+00:00",
+      "started_at": "2026-10-10T02:33:51.818881+00:00",
+      "ended_at": "2026-10-10T02:33:53.964392+00:00",
+      "next_stop_id": null,
+      "next_stop_eta_seconds": null,
+      "next_stop_eta_time": null,
+      "next_stop_distance_meters": null,
+      "eta_provider": null,
+      "id": "3ba9611c-6a44-416d-8fba-5b3edf061ab2",
+      "created_at": "2026-10-10T02:33:51.818927+00:00",
+      "updated_at": "2026-10-10T02:33:53.964408+00:00"
     }
   },
   "location_breadcrumbs": {
@@ -16128,6 +17116,30 @@
       "timestamp": "2026-10-09T20:29:27.340941+00:00",
       "id": "7864952f-1902-4fdc-8558-c3af7c380291",
       "created_at": "2026-10-09T20:29:27.363452+00:00"
+    },
+    "11d2c7b4-a2ca-45b6-a654-8cd53bc5641a": {
+      "session_id": "3ba9611c-6a44-416d-8fba-5b3edf061ab2",
+      "route_id": "309808a2-a4b7-48a5-9d5c-c0ba799f9bc6",
+      "driver_id": "d0000000-0000-0000-0000-000000000001",
+      "vehicle_id": "f0000000-0000-0000-0000-000000000001",
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "accuracy_meters": 8.5,
+      "timestamp": "2026-10-10T02:33:51.818881+00:00",
+      "id": "11d2c7b4-a2ca-45b6-a654-8cd53bc5641a",
+      "created_at": "2026-10-10T02:33:51.838477+00:00"
+    },
+    "db8a0022-9f1f-4d4b-a7b9-f6d324307f03": {
+      "session_id": "3ba9611c-6a44-416d-8fba-5b3edf061ab2",
+      "route_id": "309808a2-a4b7-48a5-9d5c-c0ba799f9bc6",
+      "driver_id": "d0000000-0000-0000-0000-000000000001",
+      "vehicle_id": "f0000000-0000-0000-0000-000000000001",
+      "latitude": 19.0765,
+      "longitude": 72.878,
+      "accuracy_meters": 6.2,
+      "timestamp": "2026-10-10T02:33:52.525273+00:00",
+      "id": "db8a0022-9f1f-4d4b-a7b9-f6d324307f03",
+      "created_at": "2026-10-10T02:33:52.552405+00:00"
     }
   },
   "service_announcements": {
@@ -16269,6 +17281,17 @@
       "photo_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
       "status": "UNDER_INVESTIGATION",
       "created_at": "2026-10-09T20:29:29.898947+00:00"
+    },
+    "fol-c2f37e84": {
+      "id": "fol-c2f37e84",
+      "followup_number": "FOL-2026-0011",
+      "report_id": "60960d36-ea24-4159-a3c2-68df01a8ff40",
+      "report_number": "REP-2026-0141",
+      "citizen_reason": "Vehicle collected small bags but left behind industrial chemical containers.",
+      "reason": "Vehicle collected small bags but left behind industrial chemical containers.",
+      "photo_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
+      "status": "UNDER_INVESTIGATION",
+      "created_at": "2026-10-10T02:33:55.071988+00:00"
     }
   }
 }
