@@ -234,6 +234,31 @@ export const api = {
   compareProofDirect: (original_image: string, after_image: string) =>
     request<any>('/ai/compare-proof', { method: 'POST', body: JSON.stringify({ original_image, after_image }) }),
   checkDuplicateReports: (candidate: any) =>
-    request<any>('/ai/check-duplicates', { method: 'POST', body: JSON.stringify(candidate) })
+    request<any>('/ai/check-duplicates', { method: 'POST', body: JSON.stringify(candidate) }),
+
+  // Geocoding & Address Resolution
+  reverseGeocode: async (lat: number, lng: number): Promise<{ success: boolean; address: string; full_address?: string }> => {
+    try {
+      const res = await request<{ success: boolean; address: string; full_address?: string }>(`/public/reverse-geocode?lat=${lat}&lng=${lng}`);
+      if (res && res.address) return res;
+    } catch {
+      // Direct client fallback to OpenStreetMap Nominatim if backend endpoint is unreachable
+      try {
+        const resp = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=jsonv2`);
+        if (resp.ok) {
+          const data = await resp.json();
+          const addr = data.address || {};
+          const road = addr.road || addr.pedestrian || addr.street || addr.residential;
+          const suburb = addr.suburb || addr.neighbourhood;
+          const city = addr.city || addr.town || addr.county;
+          const landmark = addr.amenity || addr.building || addr.house_name;
+          const parts = [landmark, road, suburb, city].filter(Boolean);
+          const formatted = parts.length > 0 ? parts.join(', ') : (data.display_name || `Coordinate ${lat.toFixed(4)}, ${lng.toFixed(4)}`);
+          return { success: true, address: formatted, full_address: data.display_name };
+        }
+      } catch {}
+    }
+    return { success: true, address: `Pin Location (${lat.toFixed(4)}, ${lng.toFixed(4)})` };
+  }
 };
 

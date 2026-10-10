@@ -59,12 +59,23 @@ export const PublicReportPage: React.FC<PublicReportProps> = ({
       setGpsStatus('Geolocation not supported by this browser. Please click the map below to select location.');
       return;
     }
-    setGpsStatus('Requesting GPS coordinate permission...');
+    setGpsStatus('Acquiring high-precision GPS fix and street landmark...');
     navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setLat(pos.coords.latitude);
-        setLng(pos.coords.longitude);
-        setGpsStatus(`GPS coordinates acquired (Accuracy: ±${Math.round(pos.coords.accuracy)}m)`);
+      async (pos) => {
+        const newLat = pos.coords.latitude;
+        const newLng = pos.coords.longitude;
+        setLat(newLat);
+        setLng(newLng);
+        setGpsStatus(`GPS acquired (±${Math.round(pos.coords.accuracy)}m) • Identifying landmark...`);
+        try {
+          const res = await api.reverseGeocode(newLat, newLng);
+          if (res && res.address) {
+            setAddress(res.address);
+            setGpsStatus(`GPS acquired (±${Math.round(pos.coords.accuracy)}m) • Landmark: ${res.address}`);
+          }
+        } catch {
+          setGpsStatus(`GPS coordinates acquired (Accuracy: ±${Math.round(pos.coords.accuracy)}m)`);
+        }
       },
       () => {
         setGpsStatus('GPS access denied or unavailable. Please click your location on the map below.');
@@ -73,10 +84,19 @@ export const PublicReportPage: React.FC<PublicReportProps> = ({
     );
   };
 
-  const handleMapPinSelect = (newLat: number, newLng: number) => {
+  const handleMapPinSelect = async (newLat: number, newLng: number) => {
     setLat(newLat);
     setLng(newLng);
-    setGpsStatus(`Selected map coordinate: ${newLat.toFixed(5)}, ${newLng.toFixed(5)}`);
+    setGpsStatus(`Pinned at: ${newLat.toFixed(5)}, ${newLng.toFixed(5)} • Identifying landmark...`);
+    try {
+      const res = await api.reverseGeocode(newLat, newLng);
+      if (res && res.address) {
+        setAddress(res.address);
+        setGpsStatus(`Pinned: ${res.address}`);
+      }
+    } catch {
+      setGpsStatus(`Selected map coordinate: ${newLat.toFixed(5)}, ${newLng.toFixed(5)}`);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

@@ -14,8 +14,78 @@ from app.policies.workflow_policy import WorkflowPolicy
 report_bp = Blueprint("report_bp", __name__)
 
 # ============================================================================
-# PUBLIC REPORT SUBMISSION & ANONYMOUS TRACKING
+# PUBLIC REPORT SUBMISSION & REVERSE GEOCODING
 # ============================================================================
+@report_bp.route("/public/reverse-geocode", methods=["GET"])
+def reverse_geocode():
+    """
+    Reverse geocodes latitude & longitude into a human-friendly address and street landmark.
+    Uses OpenStreetMap Nominatim with local municipal store fallback.
+    """
+    try:
+        lat = float(request.args.get("lat"))
+        lng = float(request.args.get("lng"))
+    except (TypeError, ValueError):
+        return jsonify({"success": False, "error": "Invalid or missing lat/lng coordinates"}), 400
+
+    try:
+        import requests
+        url = f"https://nominatim.openstreetmap.org/reverse?lat={lat}&lon={lng}&format=jsonv2"
+        headers = {"User-Agent": "EcoRoute-SmartWaste/1.0 (municipal waste management system)"}
+        resp = requests.get(url, headers=headers, timeout=5)
+        if resp.status_code == 200:
+            data = resp.json()
+            address_obj = data.get("address", {})
+            road = address_obj.get("road") or address_obj.get("pedestrian") or address_obj.get("street") or address_obj.get("residential")
+            suburb = address_obj.get("suburb") or address_obj.get("neighbourhood") or address_obj.get("subdistrict")
+            city = address_obj.get("city") or address_obj.get("town") or address_obj.get("county")
+            landmark = address_obj.get("amenity") or address_obj.get("building") or address_obj.get("house_name")
+
+            components = []
+            if landmark:
+                components.append(landmark)
+            if road:
+                components.append(road)
+            if suburb:
+                components.append(suburb)
+            if city:
+                components.append(city)
+
+            friendly_name = ", ".join(components) if components else data.get("display_name", "")
+            return jsonify({
+                "success": True,
+                "address": friendly_name,
+                "full_address": data.get("display_name", friendly_name),
+                "details": address_obj
+            })
+    except Exception as e:
+        pass
+
+    # Municipal fallback: find nearest known building or service area
+    store = DataStore.get_instance()
+    nearest_building = None
+    min_dist = float("inf")
+    for b in store.get_all("buildings"):
+        b_lat, b_lng = b.get("latitude"), b.get("longitude")
+        if b_lat is not None and b_lng is not None:
+            dist = (b_lat - lat)**2 + (b_lng - lng)**2
+            if dist < min_dist:
+                min_dist = dist
+                nearest_building = b
+
+    if nearest_building and min_dist < 0.002: # Within ~4km
+        return jsonify({
+            "success": True,
+            "address": f"Near {nearest_building.get('name')}, {nearest_building.get('address', '')}",
+            "full_address": f"{nearest_building.get('name')}, {nearest_building.get('address', '')}"
+        })
+
+    return jsonify({
+        "success": True,
+        "address": f"Pin at {lat:.5f}, {lng:.5f}",
+        "full_address": f"Coordinates: {lat:.5f}, {lng:.5f}"
+    })
+
 @report_bp.route("/public/reports", methods=["POST"])
 def submit_public_report():
     """

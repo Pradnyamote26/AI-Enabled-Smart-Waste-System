@@ -228,12 +228,23 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
       setGpsAccuracyMsg('Geolocation not supported by device. Please click on map below.');
       return;
     }
-    setGpsAccuracyMsg('Acquiring high-precision GPS fix...');
+    setGpsAccuracyMsg('Acquiring high-precision GPS fix and street landmark...');
     navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setReportLat(pos.coords.latitude);
-        setReportLng(pos.coords.longitude);
-        setGpsAccuracyMsg(`GPS coordinates acquired (±${Math.round(pos.coords.accuracy)}m accuracy)`);
+      async (pos) => {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        setReportLat(lat);
+        setReportLng(lng);
+        setGpsAccuracyMsg(`GPS acquired (±${Math.round(pos.coords.accuracy)}m) • Identifying landmark...`);
+        try {
+          const res = await api.reverseGeocode(lat, lng);
+          if (res && res.address) {
+            setReportAddress(res.address);
+            setGpsAccuracyMsg(`GPS acquired (±${Math.round(pos.coords.accuracy)}m) • Landmark: ${res.address}`);
+          }
+        } catch {
+          setGpsAccuracyMsg(`GPS coordinates acquired (±${Math.round(pos.coords.accuracy)}m accuracy)`);
+        }
       },
       () => {
         setGpsAccuracyMsg('Location permission denied. Click map to set pin.');
@@ -815,10 +826,19 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
                   <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
                     <MapComponent
                       markers={reportMapMarkers}
-                      onLocationSelect={(lat, lng) => {
+                      onLocationSelect={async (lat, lng) => {
                         setReportLat(lat);
                         setReportLng(lng);
-                        setGpsAccuracyMsg(`Pinned at: ${lat.toFixed(5)}, ${lng.toFixed(5)}`);
+                        setGpsAccuracyMsg(`Pinned at: ${lat.toFixed(5)}, ${lng.toFixed(5)} • Identifying landmark...`);
+                        try {
+                          const res = await api.reverseGeocode(lat, lng);
+                          if (res && res.address) {
+                            setReportAddress(res.address);
+                            setGpsAccuracyMsg(`Pinned: ${res.address}`);
+                          }
+                        } catch {
+                          setGpsAccuracyMsg(`Pinned at: ${lat.toFixed(5)}, ${lng.toFixed(5)}`);
+                        }
                       }}
                       center={[reportLat, reportLng]}
                       height="260px"
