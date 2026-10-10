@@ -1,4 +1,13 @@
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string) || 'http://localhost:5050/api/v1';
+function resolveApiBaseUrl(): string {
+  const envUrl = (import.meta.env.VITE_API_BASE_URL as string)?.trim();
+  if (!envUrl) {
+    return 'http://localhost:5050/api/v1';
+  }
+  const cleanUrl = envUrl.replace(/\/+$/, '');
+  return cleanUrl.endsWith('/api/v1') ? cleanUrl : `${cleanUrl}/api/v1`;
+}
+
+const API_BASE = resolveApiBaseUrl();
 
 export class ApiError extends Error {
   code: string;
