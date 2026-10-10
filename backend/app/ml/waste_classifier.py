@@ -7,10 +7,18 @@ import requests
 import numpy as np
 from PIL import Image, ImageFilter, ImageStat
 
-import torch
-import torch.nn as nn
-import torchvision.transforms as transforms
-from torchvision.models import mobilenet_v3_small
+try:
+    import torch
+    import torch.nn as nn
+    import torchvision.transforms as transforms
+    from torchvision.models import mobilenet_v3_small
+    HAS_TORCH = True
+except ImportError:
+    HAS_TORCH = False
+    torch = None
+    nn = None
+    transforms = None
+    mobilenet_v3_small = None
 
 MODELS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "models"))
 WEIGHTS_PATH = os.path.join(MODELS_DIR, "ecovision_wastenet_mobilenetv3.pt")
@@ -44,7 +52,7 @@ class WasteClassifier:
         self.target_classes = ["GLASS", "PAPER", "PLASTIC", "METAL", "ORGANIC"]
         self.idx_to_class = {0: "GLASS", 1: "PAPER", 2: "PLASTIC", 3: "METAL", 4: "ORGANIC"}
 
-        if os.path.exists(WEIGHTS_PATH) and os.path.exists(CLASS_MAP_PATH):
+        if HAS_TORCH and os.path.exists(WEIGHTS_PATH) and os.path.exists(CLASS_MAP_PATH):
             try:
                 with open(CLASS_MAP_PATH, "r") as f:
                     cmap = json.load(f)
