@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Truck, Shield, Search, PlusCircle, LogIn, LogOut, User, AlertCircle, Menu, X, Sparkles } from 'lucide-react';
+import { Truck, Shield, LogIn, LogOut, User, AlertCircle, Menu, X, Sparkles } from 'lucide-react';
 import { api, setStoredToken } from './services/api';
 import { PublicPortal } from './features/public/PublicPortal';
 import { AdminPortal } from './features/admin/AdminPortal';
@@ -68,30 +68,16 @@ export function App() {
 
         {/* Desktop Navigation */}
         <nav className="nav-actions desktop-nav">
-          {/* Public options */}
-          <button
-            onClick={() => switchTab('portal')}
-            className={`nav-link ${currentTab === 'portal' ? 'active' : ''}`}
-            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
-          >
-            <Sparkles size={16} /> Services Hub
-          </button>
-
-          <button
-            onClick={() => switchTab('report')}
-            className={`nav-link ${currentTab === 'report' ? 'active' : ''}`}
-            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
-          >
-            <PlusCircle size={16} /> Report Waste
-          </button>
-
-          <button
-            onClick={() => switchTab('track')}
-            className={`nav-link ${currentTab === 'track' ? 'active' : ''}`}
-            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
-          >
-            <Search size={16} /> Track Request & ETA
-          </button>
+          {/* Quick link to return to Public Resident Portal when in admin or driver view */}
+          {(currentTab === 'admin' || currentTab === 'driver') && (
+            <button
+              onClick={() => switchTab('portal')}
+              className="nav-link"
+              style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+            >
+              <Sparkles size={16} /> Resident Portal
+            </button>
+          )}
 
           {/* Role views */}
           {currentUser?.role === 'admin' && (
@@ -181,16 +167,10 @@ export function App() {
         <div className="mobile-nav-drawer">
           <div className="mobile-nav-links">
             <button
-              onClick={() => switchTab('report')}
-              className={`mobile-nav-item ${currentTab === 'report' ? 'active' : ''}`}
+              onClick={() => switchTab('portal')}
+              className={`mobile-nav-item ${currentTab === 'portal' ? 'active' : ''}`}
             >
-              <PlusCircle size={18} /> Report Waste
-            </button>
-            <button
-              onClick={() => switchTab('track')}
-              className={`mobile-nav-item ${currentTab === 'track' ? 'active' : ''}`}
-            >
-              <Search size={18} /> Track Request Status
+              <Sparkles size={18} /> Resident Services Portal
             </button>
             {currentUser?.role === 'admin' && (
               <button
