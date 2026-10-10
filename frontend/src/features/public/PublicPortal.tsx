@@ -414,21 +414,22 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
     <div className="public-portal-root" style={{ minHeight: '90vh', background: '#f8faf9', paddingBottom: '4rem' }}>
       {/* Hero Header */}
       <div style={{
-        background: 'linear-gradient(135deg, #0f3d2e 0%, #1b5e48 60%, #2d7a60 100%)',
+        background: 'linear-gradient(135deg, #081c15 0%, #1b4332 55%, #2d6a4f 100%)',
         color: '#ffffff',
-        padding: '2.5rem 1.5rem 2rem',
-        boxShadow: '0 4px 20px rgba(15, 61, 46, 0.25)'
+        padding: '1.5rem 1.5rem 1.25rem',
+        boxShadow: '0 4px 16px rgba(8, 28, 21, 0.25)',
+        borderBottom: '1px solid rgba(82, 183, 136, 0.2)'
       }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
+        <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.15)', padding: '0.3rem 0.75rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 600, color: '#86efac', marginBottom: '0.75rem' }}>
-                <Shield size={14} /> Official Municipal Resident Portal
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255,255,255,0.12)', padding: '0.25rem 0.65rem', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 600, color: '#86efac', marginBottom: '0.4rem' }}>
+                <Shield size={13} /> Official Municipal Resident Portal
               </div>
-              <h1 style={{ fontSize: '2.1rem', fontWeight: 800, margin: '0 0 0.5rem', letterSpacing: '-0.02em', color: '#ffffff' }}>
+              <h1 style={{ fontSize: '1.75rem', fontWeight: 800, margin: '0 0 0.25rem', letterSpacing: '-0.02em', color: '#ffffff' }}>
                 EcoRoute Waste Services Portal
               </h1>
-              <p style={{ color: '#d1fae5', fontSize: '0.98rem', maxWidth: '650px', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ color: '#d1fae5', fontSize: '0.9rem', maxWidth: '750px', margin: 0, lineHeight: 1.4 }}>
                 Report municipal waste issues, follow assigned collection trucks with live GPS radar, view neighborhood collection schedules, and track resolution proofs.
               </p>
             </div>
@@ -436,37 +437,37 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
             {/* Resident account status widget */}
             <div>
               {currentUser?.role === 'reporter' ? (
-                <div style={{ background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)', padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.2)' }}>
-                  <div style={{ fontSize: '0.75rem', color: '#a7f3d0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <div style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)', padding: '0.65rem 1rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <div style={{ fontSize: '0.72rem', color: '#a7f3d0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Welcome, Resident
                   </div>
-                  <div style={{ fontWeight: 700, fontSize: '1rem', color: '#ffffff', marginTop: '0.15rem' }}>
+                  <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#ffffff', marginTop: '0.1rem' }}>
                     {currentUser.full_name}
                   </div>
-                  <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+                  <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.35rem' }}>
                     <button
                       onClick={() => setActiveTab('my-reports')}
                       className="btn btn-sm btn-outline"
-                      style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)', fontSize: '0.75rem' }}
+                      style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)', fontSize: '0.72rem', padding: '0.2rem 0.5rem' }}
                     >
                       My Reports ({myReports.length})
                     </button>
                     {unreadNotifsCount > 0 && (
-                      <span style={{ background: '#ef4444', color: '#fff', fontSize: '0.75rem', padding: '0.2rem 0.5rem', borderRadius: '50px', fontWeight: 700 }}>
+                      <span style={{ background: '#ef4444', color: '#fff', fontSize: '0.72rem', padding: '0.15rem 0.45rem', borderRadius: '50px', fontWeight: 700 }}>
                         {unreadNotifsCount} new
                       </span>
                     )}
                   </div>
                 </div>
               ) : (
-                <div style={{ background: 'rgba(0,0,0,0.2)', padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.15)', textAlign: 'right' }}>
-                  <div style={{ fontSize: '0.8rem', color: '#e2e8f0' }}>Registered Resident?</div>
+                <div style={{ background: 'rgba(0,0,0,0.22)', padding: '0.65rem 1rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.15)', textAlign: 'right' }}>
+                  <div style={{ fontSize: '0.76rem', color: '#e2e8f0' }}>Registered Resident?</div>
                   <button
                     onClick={() => onOpenAuth && onOpenAuth('reporter')}
                     className="btn btn-sm btn-primary"
-                    style={{ marginTop: '0.4rem', fontSize: '0.8rem' }}
+                    style={{ marginTop: '0.3rem', fontSize: '0.78rem', padding: '0.3rem 0.75rem' }}
                   >
-                    <User size={13} /> Sign In to Save Tickets
+                    <User size={12} /> Sign In to Save Tickets
                   </button>
                 </div>
               )}
@@ -474,7 +475,7 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
           </div>
 
           {/* Quick-Action Navigation Tabs */}
-          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '2rem', flexWrap: 'wrap', borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '1.25rem' }}>
+          <div style={{ display: 'flex', gap: '0.45rem', marginTop: '1.25rem', flexWrap: 'wrap', borderTop: '1px solid rgba(255,255,255,0.12)', paddingTop: '0.9rem' }}>
             <button
               onClick={() => setActiveTab('home')}
               className={`portal-nav-chip ${activeTab === 'home' ? 'active' : ''}`}
@@ -485,52 +486,52 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
               onClick={() => setActiveTab('report')}
               className={`portal-nav-chip ${activeTab === 'report' ? 'active' : ''}`}
             >
-              <PlusCircle size={15} /> Report Waste
+              <PlusCircle size={14} /> Report Waste
             </button>
             <button
               onClick={() => setActiveTab('track')}
               className={`portal-nav-chip ${activeTab === 'track' ? 'active' : ''}`}
             >
-              <Search size={15} /> Track Request & ETA
+              <Search size={14} /> Track Request & ETA
             </button>
             <button
               onClick={() => setActiveTab('schedules')}
               className={`portal-nav-chip ${activeTab === 'schedules' ? 'active' : ''}`}
             >
-              <Calendar size={15} /> Collection Schedules
+              <Calendar size={14} /> Collection Schedules
             </button>
             <button
               onClick={() => setActiveTab('announcements')}
               className={`portal-nav-chip ${activeTab === 'announcements' ? 'active' : ''}`}
             >
-              <Bell size={15} /> Service Bulletins
+              <Bell size={14} /> Service Bulletins
               {announcements.length > 0 && <span style={{ marginLeft: '4px', background: '#22c55e', color: '#fff', fontSize: '10px', padding: '1px 5px', borderRadius: '10px' }}>{announcements.length}</span>}
             </button>
             <button
               onClick={() => setActiveTab('missed')}
               className={`portal-nav-chip ${activeTab === 'missed' ? 'active' : ''}`}
             >
-              <AlertTriangle size={15} /> Missed Pickup
+              <AlertTriangle size={14} /> Missed Pickup
             </button>
             <button
               onClick={() => setActiveTab('faq')}
               className={`portal-nav-chip ${activeTab === 'faq' ? 'active' : ''}`}
             >
-              <HelpCircle size={15} /> Help & FAQs
+              <HelpCircle size={14} /> Help & FAQs
             </button>
             {currentUser?.role === 'reporter' && (
               <button
                 onClick={() => setActiveTab('my-reports')}
                 className={`portal-nav-chip ${activeTab === 'my-reports' ? 'active' : ''}`}
               >
-                <FileText size={15} /> My Reports ({myReports.length})
+                <FileText size={14} /> My Reports ({myReports.length})
               </button>
             )}
           </div>
         </div>
       </div>
 
-      <div style={{ maxWidth: '1100px', margin: '2rem auto 0', padding: '0 1rem' }}>
+      <div style={{ maxWidth: '1360px', margin: '1.5rem auto 2.5rem', padding: '0 1.25rem' }}>
         {/* ================================================================= */}
         {/* TAB 1: HOME SERVICES HUB                                          */}
         {/* ================================================================= */}
@@ -687,31 +688,22 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
         {/* TAB 2: REPORT WASTE INCIDENT                                      */}
         {/* ================================================================= */}
         {activeTab === 'report' && (
-          <div style={{ maxWidth: '850px', margin: '0 auto' }}>
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--forest-900)' }}>
-                File Sanitation & Garbage Collection Ticket
-              </h2>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginTop: '0.25rem' }}>
-                Reports are analyzed by the EcoVision AI Model and automatically assigned to municipal compactor trucks.
-              </p>
-            </div>
-
+          <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
             {reportSubmitSuccess ? (
-              <div className="card-table-wrapper" style={{ padding: '2rem', textAlign: 'center', background: '#ffffff', borderRadius: 'var(--radius-lg)' }}>
+              <div className="card-table-wrapper" style={{ padding: '2.5rem 2rem', textAlign: 'center', background: '#ffffff', borderRadius: 'var(--radius-lg)', maxWidth: '720px', margin: '0 auto', boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}>
                 <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: '#dcfce7', color: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem' }}>
                   <CheckCircle2 size={36} />
                 </div>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--forest-900)' }}>
+                <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--forest-900)' }}>
                   Report Successfully Registered!
                 </h3>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', maxWidth: '500px', margin: '0.5rem auto 1.5rem' }}>
                   Your sanitation request has been cataloged under municipal dispatch reference number:
                 </p>
 
-                <div style={{ display: 'inline-block', background: '#f1f5f9', padding: '0.75rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', marginBottom: '1.5rem' }}>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-subtle)', textTransform: 'uppercase' }}>Reference Number</div>
-                  <div style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--forest-900)', fontFamily: 'monospace' }}>
+                <div style={{ display: 'inline-block', background: '#f1f5f9', padding: '0.75rem 1.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', marginBottom: '1.5rem' }}>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-subtle)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Reference Number</div>
+                  <div style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--forest-900)', fontFamily: 'monospace' }}>
                     {reportSubmitSuccess.report_number}
                   </div>
                 </div>
@@ -769,168 +761,359 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleReportFormSubmit} className="public-form-card" style={{ background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-lg)' }}>
-                {reportSubmitError && (
-                  <div className="alert-box alert-danger" style={{ marginBottom: '1.25rem' }}>
-                    <AlertCircle size={20} />
-                    <span>{reportSubmitError}</span>
+              <div>
+                {/* Section Header */}
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: '1.25rem',
+                  flexWrap: 'wrap',
+                  gap: '0.75rem',
+                  borderBottom: '1px solid var(--border-color)',
+                  paddingBottom: '0.85rem'
+                }}>
+                  <div>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', fontWeight: 700, color: '#16a34a', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                      <Sparkles size={14} /> EcoVision AI Municipal Dispatch
+                    </div>
+                    <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0.15rem 0 0' }}>
+                      File Sanitation & Garbage Collection Ticket
+                    </h2>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.86rem', margin: '0.15rem 0 0' }}>
+                      Fill in the details or pinpoint the map. Reports are analyzed by AI and dynamically routed to the nearest municipal compactor truck.
+                    </p>
                   </div>
-                )}
-
-                <div style={{ marginBottom: '1.25rem' }}>
-                  <label className="form-label" style={{ fontWeight: 700 }}>Waste Category</label>
-                  <select
-                    className="form-select"
-                    value={reportType}
-                    onChange={(e) => setReportType(e.target.value)}
-                  >
-                    <option value="OVERFLOWING_BIN">Overflowing Municipal Dustbin</option>
-                    <option value="NO_BIN_GARBAGE">Garbage Dumped Without Dustbin</option>
-                    <option value="SCATTERED_WASTE">Scattered Plastic & Street Debris</option>
-                    <option value="MISSED_COLLECTION">Missed Society / Building Collection</option>
-                    <option value="HAZARDOUS_WASTE">Hazardous / Medical / Chemical Waste</option>
-                    <option value="ILLEGAL_DUMPING">Illegal Commercial Bulk Dumping</option>
-                  </select>
-                </div>
-
-                <div style={{ marginBottom: '1.25rem' }}>
-                  <label className="form-label" style={{ fontWeight: 700 }}>Location & Street Landmark</label>
-                  <input
-                    type="text"
-                    className="form-input"
-                    placeholder="e.g. Near Sector 4 Bus Stop, opposite Gulmohar Society main gate"
-                    value={reportAddress}
-                    onChange={(e) => setReportAddress(e.target.value)}
-                    required
-                  />
-                </div>
-
-                {/* Map Pin Picker & GPS Acquisition */}
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                    <label className="form-label" style={{ fontWeight: 700, margin: 0 }}>Pinpoint Incident on Map</label>
+                  <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                     <button
                       type="button"
                       onClick={handleRequestGps}
-                      className="btn btn-sm btn-outline"
-                      style={{ fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}
+                      className="btn btn-outline btn-sm"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.35rem',
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        background: '#ffffff',
+                        color: '#166534',
+                        borderColor: '#86efac'
+                      }}
                     >
-                      <MapPin size={13} /> Acquire Device GPS
+                      <MapPin size={14} /> Acquire Device GPS
                     </button>
                   </div>
-                  {gpsAccuracyMsg && (
-                    <div style={{ fontSize: '0.75rem', color: '#166534', marginBottom: '0.4rem', fontWeight: 600 }}>
-                      {gpsAccuracyMsg}
+                </div>
+
+                <form onSubmit={handleReportFormSubmit}>
+                  {reportSubmitError && (
+                    <div className="alert-box alert-danger" style={{ marginBottom: '1.25rem' }}>
+                      <AlertCircle size={20} />
+                      <span>{reportSubmitError}</span>
                     </div>
                   )}
-                  <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
-                    <MapComponent
-                      markers={reportMapMarkers}
-                      onLocationSelect={async (lat, lng) => {
-                        setReportLat(lat);
-                        setReportLng(lng);
-                        setGpsAccuracyMsg(`Pinned at: ${lat.toFixed(5)}, ${lng.toFixed(5)} • Identifying landmark...`);
-                        try {
-                          const res = await api.reverseGeocode(lat, lng);
-                          if (res && res.address) {
-                            setReportAddress(res.address);
-                            setGpsAccuracyMsg(`Pinned: ${res.address}`);
-                          }
-                        } catch {
-                          setGpsAccuracyMsg(`Pinned at: ${lat.toFixed(5)}, ${lng.toFixed(5)}`);
-                        }
-                      }}
-                      center={[reportLat, reportLng]}
-                      height="260px"
-                      zoom={15}
-                    />
-                  </div>
-                </div>
 
-                {/* Photo Evidence Upload */}
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <label className="form-label" style={{ fontWeight: 700 }}>Upload Incident Photo (Optional but Recommended)</label>
-                  <div style={{ border: '2px dashed var(--border-color)', borderRadius: 'var(--radius-md)', padding: '1.5rem', textAlign: 'center', background: '#fafbfc' }}>
-                    {reportImagePreview ? (
-                      <div>
-                        <img
-                          src={reportImagePreview}
-                          alt="Preview"
-                          style={{ maxHeight: '180px', borderRadius: 'var(--radius-sm)', objectFit: 'cover', margin: '0 auto 0.75rem' }}
+                  <div className="public-report-grid">
+                    {/* ========================================================= */}
+                    {/* COLUMN 1 (LEFT): INCIDENT DETAILS & CONTACT               */}
+                    {/* ========================================================= */}
+                    <div style={{
+                      background: '#ffffff',
+                      padding: '1.75rem',
+                      borderRadius: 'var(--radius-lg)',
+                      border: '1px solid var(--border-color)',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        paddingBottom: '0.75rem',
+                        marginBottom: '1.25rem',
+                        borderBottom: '1px solid #f1f5f9'
+                      }}>
+                        <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#dcfce7', color: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.85rem' }}>
+                          1
+                        </div>
+                        <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--forest-900)', margin: 0 }}>
+                          Incident Information
+                        </h3>
+                      </div>
+
+                      {/* Waste Category Selector */}
+                      <div style={{ marginBottom: '1.25rem' }}>
+                        <label className="form-label" style={{ fontWeight: 700, fontSize: '0.85rem' }}>
+                          Waste Category <span style={{ color: '#dc2626' }}>*</span>
+                        </label>
+                        <select
+                          className="form-select"
+                          value={reportType}
+                          onChange={(e) => setReportType(e.target.value)}
+                          style={{ fontWeight: 600 }}
+                        >
+                          <option value="OVERFLOWING_BIN">Overflowing Municipal Dustbin</option>
+                          <option value="NO_BIN_GARBAGE">Garbage Dumped Without Dustbin (Illegal Dumping)</option>
+                          <option value="SCATTERED_WASTE">Scattered Plastic & Street Debris</option>
+                          <option value="MISSED_COLLECTION">Missed Society / Building Collection</option>
+                          <option value="HAZARDOUS_WASTE">Hazardous / Medical / Chemical Waste</option>
+                          <option value="ILLEGAL_DUMPING">Illegal Commercial Bulk Dumping</option>
+                        </select>
+                      </div>
+
+                      {/* Location & Street Landmark */}
+                      <div style={{ marginBottom: '1.25rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                          <label className="form-label" style={{ fontWeight: 700, fontSize: '0.85rem', margin: 0 }}>
+                            Location & Street Landmark <span style={{ color: '#dc2626' }}>*</span>
+                          </label>
+                          <span style={{ fontSize: '0.72rem', color: '#166534', fontWeight: 600 }}>
+                            Auto-detected from GPS / Map
+                          </span>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-input"
+                          placeholder="e.g. Near Sector 4 Bus Stop, opposite Gulmohar Society main gate"
+                          value={reportAddress}
+                          onChange={(e) => setReportAddress(e.target.value)}
+                          required
+                          style={{ fontWeight: 500 }}
                         />
-                        <div>
-                          <button
-                            type="button"
-                            onClick={() => setReportImagePreview(null)}
-                            className="btn btn-sm btn-danger"
-                          >
-                            Remove Photo
-                          </button>
+                        <div style={{ fontSize: '0.72rem', color: 'var(--text-subtle)', marginTop: '0.25rem' }}>
+                          Coordinates: {reportLat.toFixed(5)}, {reportLng.toFixed(5)} (Click map on right to adjust)
                         </div>
                       </div>
-                    ) : (
-                      <label style={{ cursor: 'pointer', display: 'block' }}>
-                        <Camera size={32} style={{ color: 'var(--forest-700)', margin: '0 auto 0.5rem' }} />
-                        <span style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--forest-900)', display: 'block' }}>
-                          Take Photo or Upload Image
-                        </span>
-                        <span style={{ fontSize: '0.75rem', color: 'var(--text-subtle)' }}>
-                          Supports JPG, PNG up to 8MB. Analyzed by AI for fill level & waste type.
-                        </span>
-                        <input
-                          type="file"
-                          accept="image/*"
-                          onChange={handleReportImageUpload}
-                          style={{ display: 'none' }}
+
+                      {/* Description & Observations */}
+                      <div style={{ marginBottom: '1.25rem' }}>
+                        <label className="form-label" style={{ fontWeight: 700, fontSize: '0.85rem' }}>
+                          Description & Observations
+                        </label>
+                        <textarea
+                          className="form-textarea"
+                          rows={3}
+                          placeholder="Describe severity, spillover onto pedestrian footpath, foul odor, or stray animal disturbance..."
+                          value={reportDesc}
+                          onChange={(e) => setReportDesc(e.target.value)}
                         />
-                      </label>
-                    )}
+                        {/* Quick-Pick Tags */}
+                        <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap', marginTop: '0.4rem' }}>
+                          {['Overflowing', 'Foul Odor', 'Footpath Blocked', 'Stray Animals', 'Plastic Dump'].map((tag) => (
+                            <button
+                              key={tag}
+                              type="button"
+                              onClick={() => {
+                                setReportDesc((prev) => prev ? `${prev}, ${tag}` : tag);
+                              }}
+                              className="btn btn-sm btn-ghost"
+                              style={{ fontSize: '0.7rem', padding: '0.15rem 0.5rem', background: '#f1f5f9', borderRadius: '12px' }}
+                            >
+                              + {tag}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Contact Info (Phone / Email) */}
+                      <div style={{ marginBottom: '1.5rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                          <label className="form-label" style={{ fontWeight: 700, fontSize: '0.85rem', margin: 0 }}>
+                            Phone / Email (For Status Alerts)
+                          </label>
+                          <span style={{ fontSize: '0.72rem', color: 'var(--text-subtle)' }}>
+                            Optional & Protected
+                          </span>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-input"
+                          placeholder="e.g. 9820098200 or citizen@example.com (Kept strictly private)"
+                          value={reportContact}
+                          onChange={(e) => setReportContact(e.target.value)}
+                        />
+                        <span style={{ fontSize: '0.72rem', color: 'var(--text-subtle)', display: 'block', marginTop: '0.25rem' }}>
+                          🔒 Contact details are never public and only used for municipal resolution updates.
+                        </span>
+                      </div>
+
+                      {/* Submit Button */}
+                      <button
+                        type="submit"
+                        disabled={isSubmittingReport}
+                        className="btn btn-primary btn-lg"
+                        style={{ width: '100%', justifyContent: 'center', fontSize: '1rem', fontWeight: 700, padding: '0.85rem' }}
+                      >
+                        {isSubmittingReport ? (
+                          <>
+                            <RefreshCw size={18} className="animate-spin" />
+                            Analyzing with EcoVision AI & Dispatching...
+                          </>
+                        ) : (
+                          <>
+                            <Sparkles size={18} /> Submit Municipal Waste Ticket
+                          </>
+                        )}
+                      </button>
+                    </div>
+
+                    {/* ========================================================= */}
+                    {/* COLUMN 2 (RIGHT): VISUAL EVIDENCE & MAP PINPICKER         */}
+                    {/* ========================================================= */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                      {/* Map Card */}
+                      <div style={{
+                        background: '#ffffff',
+                        padding: '1.5rem',
+                        borderRadius: 'var(--radius-lg)',
+                        border: '1px solid var(--border-color)',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                      }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#dbeafe', color: '#2563eb', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.85rem' }}>
+                              2
+                            </div>
+                            <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--forest-900)', margin: 0 }}>
+                              Map Location Pinpoint
+                            </h3>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={handleRequestGps}
+                            className="btn btn-sm btn-outline"
+                            style={{ fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.3rem', color: '#166534', borderColor: '#86efac' }}
+                          >
+                            <MapPin size={12} /> Acquire GPS
+                          </button>
+                        </div>
+
+                        {gpsAccuracyMsg && (
+                          <div style={{
+                            fontSize: '0.75rem',
+                            color: '#166534',
+                            background: '#f0fdf4',
+                            border: '1px solid #bbf7d0',
+                            padding: '0.4rem 0.65rem',
+                            borderRadius: 'var(--radius-sm)',
+                            marginBottom: '0.65rem',
+                            fontWeight: 600
+                          }}>
+                            {gpsAccuracyMsg}
+                          </div>
+                        )}
+
+                        <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
+                          <MapComponent
+                            markers={reportMapMarkers}
+                            onLocationSelect={async (lat, lng) => {
+                              setReportLat(lat);
+                              setReportLng(lng);
+                              setGpsAccuracyMsg(`Pinned at: ${lat.toFixed(5)}, ${lng.toFixed(5)} • Identifying landmark...`);
+                              try {
+                                const res = await api.reverseGeocode(lat, lng);
+                                if (res && res.address) {
+                                  setReportAddress(res.address);
+                                  setGpsAccuracyMsg(`Pinned: ${res.address}`);
+                                }
+                              } catch {
+                                setGpsAccuracyMsg(`Pinned at: ${lat.toFixed(5)}, ${lng.toFixed(5)}`);
+                              }
+                            }}
+                            center={[reportLat, reportLng]}
+                            height="280px"
+                            zoom={15}
+                          />
+                        </div>
+                        <div style={{ fontSize: '0.72rem', color: 'var(--text-subtle)', marginTop: '0.4rem', textAlign: 'center' }}>
+                          💡 Tip: Click anywhere on the map to pinpoint exact bin or street location
+                        </div>
+                      </div>
+
+                      {/* Photo Upload Card */}
+                      <div style={{
+                        background: '#ffffff',
+                        padding: '1.5rem',
+                        borderRadius: 'var(--radius-lg)',
+                        border: '1px solid var(--border-color)',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                          <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#fef3c7', color: '#d97706', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.85rem' }}>
+                            3
+                          </div>
+                          <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--forest-900)', margin: 0 }}>
+                            Photo Evidence (EcoVision AI)
+                          </h3>
+                        </div>
+
+                        <div style={{
+                          border: '2px dashed var(--border-color)',
+                          borderRadius: 'var(--radius-md)',
+                          padding: '1.25rem',
+                          textAlign: 'center',
+                          background: reportImagePreview ? '#ffffff' : '#fafbfc',
+                          transition: 'all 0.2s ease'
+                        }}>
+                          {reportImagePreview ? (
+                            <div>
+                              <img
+                                src={reportImagePreview}
+                                alt="Incident Preview"
+                                style={{ maxHeight: '180px', borderRadius: 'var(--radius-sm)', objectFit: 'cover', margin: '0 auto 0.75rem', display: 'block', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
+                              />
+                              <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', alignItems: 'center' }}>
+                                <span style={{ fontSize: '0.75rem', color: '#16a34a', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+                                  <CheckCircle2 size={13} /> Photo Ready for AI Analysis
+                                </span>
+                                <button
+                                  type="button"
+                                  onClick={() => setReportImagePreview(null)}
+                                  className="btn btn-sm btn-danger"
+                                  style={{ fontSize: '0.75rem' }}
+                                >
+                                  Remove Photo
+                                </button>
+                              </div>
+                            </div>
+                          ) : (
+                            <label style={{ cursor: 'pointer', display: 'block', padding: '0.5rem' }}>
+                              <Camera size={34} style={{ color: 'var(--forest-700)', margin: '0 auto 0.5rem' }} />
+                              <span style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--forest-900)', display: 'block' }}>
+                                Take Photo or Upload Image
+                              </span>
+                              <span style={{ fontSize: '0.76rem', color: 'var(--text-subtle)', display: 'block', marginTop: '0.2rem' }}>
+                                Supports JPG, PNG up to 8MB. Automatically analyzed for waste category & volume.
+                              </span>
+                              <input
+                                type="file"
+                                accept="image/*"
+                                onChange={handleReportImageUpload}
+                                style={{ display: 'none' }}
+                              />
+                            </label>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Security & Token Guarantee Pill */}
+                      <div style={{
+                        background: '#f8fafc',
+                        border: '1px solid #e2e8f0',
+                        borderRadius: 'var(--radius-md)',
+                        padding: '0.85rem 1rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.75rem'
+                      }}>
+                        <Shield size={20} color="#059669" />
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
+                          <strong style={{ color: 'var(--forest-900)' }}>Anonymous Tracking Guarantee:</strong> You will receive a private, unguessable tracking code to follow vehicle dispatch in real time.
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <label className="form-label" style={{ fontWeight: 700 }}>Description & Observations</label>
-                  <textarea
-                    className="form-textarea"
-                    rows={3}
-                    placeholder="Describe severity, spillover onto pedestrian footpath, foul odor, or stray animal disturbance..."
-                    value={reportDesc}
-                    onChange={(e) => setReportDesc(e.target.value)}
-                  />
-                </div>
-
-                <div style={{ marginBottom: '1.75rem' }}>
-                  <label className="form-label" style={{ fontWeight: 700 }}>Phone / Email (For Status SMS/Email Alerts)</label>
-                  <input
-                    type="text"
-                    className="form-input"
-                    placeholder="e.g. 9820098200 or citizen@example.com (Kept strictly private)"
-                    value={reportContact}
-                    onChange={(e) => setReportContact(e.target.value)}
-                  />
-                  <span style={{ fontSize: '0.72rem', color: 'var(--text-subtle)', display: 'block', marginTop: '0.25rem' }}>
-                    Contact details are never published and only used for service notifications.
-                  </span>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmittingReport}
-                  className="btn btn-primary btn-lg"
-                  style={{ width: '100%', justifyContent: 'center' }}
-                >
-                  {isSubmittingReport ? (
-                    <>
-                      <RefreshCw size={16} className="animate-spin" />
-                      Analyzing with EcoVision AI & Dispatching...
-                    </>
-                  ) : (
-                    <>
-                      <Sparkles size={16} /> Submit Municipal Waste Ticket
-                    </>
-                  )}
-                </button>
-              </form>
+                </form>
+              </div>
             )}
           </div>
         )}
