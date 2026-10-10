@@ -156,6 +156,23 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.mobile-nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 2400;
+  animation: fadeInBackdrop 0.2s ease;
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .mobile-nav-drawer {
   position: absolute;
   top: 100%;
@@ -164,8 +181,8 @@ body {
   background: #081c15;
   border-bottom: 2px solid #52b788;
   padding: 1.25rem 1.25rem 1.5rem;
-  z-index: 1200;
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  z-index: 2500;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   gap: 1rem;

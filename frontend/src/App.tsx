@@ -160,86 +160,92 @@ export function App() {
         >
           {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
+
+        {/* Mobile Drawer Navigation (attached directly below top-bar) */}
+        {mobileMenuOpen && (
+          <>
+            <div
+              className="mobile-nav-backdrop"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            <div className="mobile-nav-drawer">
+              <div className="mobile-nav-links">
+                <button
+                  onClick={() => switchTab('portal')}
+                  className={`mobile-nav-item ${currentTab === 'portal' ? 'active' : ''}`}
+                >
+                  <Sparkles size={18} /> Resident Services Portal
+                </button>
+                {currentUser?.role === 'admin' && (
+                  <button
+                    onClick={() => switchTab('admin')}
+                    className={`mobile-nav-item ${currentTab === 'admin' ? 'active' : ''}`}
+                  >
+                    <Shield size={18} /> Admin Command Center
+                  </button>
+                )}
+                {currentUser?.role === 'driver' && (
+                  <button
+                    onClick={() => switchTab('driver')}
+                    className={`mobile-nav-item ${currentTab === 'driver' ? 'active' : ''}`}
+                  >
+                    <Truck size={18} /> Driver Route Tasks
+                  </button>
+                )}
+                {currentUser?.role === 'reporter' && (
+                  <button
+                    onClick={() => switchTab('reporter')}
+                    className={`mobile-nav-item ${currentTab === 'reporter' ? 'active' : ''}`}
+                  >
+                    <User size={18} /> Citizen Portal
+                  </button>
+                )}
+              </div>
+
+              <div className="mobile-nav-auth">
+                {currentUser ? (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                    <div style={{ fontSize: '0.85rem', color: '#a7f3d0', fontWeight: 600 }}>
+                      Signed in as: {currentUser.full_name} ({currentUser.role.toUpperCase()})
+                    </div>
+                    <button
+                      onClick={handleLogout}
+                      className="btn btn-secondary btn-sm"
+                      style={{ width: '100%', justifyContent: 'center' }}
+                    >
+                      <LogOut size={16} /> Sign Out
+                    </button>
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <button
+                      onClick={() => openAuth('admin')}
+                      className="btn btn-outline btn-sm"
+                      style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)', justifyContent: 'center' }}
+                    >
+                      <Shield size={15} /> Admin Login
+                    </button>
+                    <button
+                      onClick={() => openAuth('driver')}
+                      className="btn btn-outline btn-sm"
+                      style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)', justifyContent: 'center' }}
+                    >
+                      <Truck size={15} /> Driver Login
+                    </button>
+                    <button
+                      onClick={() => openAuth('reporter')}
+                      className="btn btn-primary btn-sm"
+                      style={{ justifyContent: 'center' }}
+                    >
+                      <LogIn size={15} /> Citizen Sign In / Register
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </>
+        )}
       </header>
-
-      {/* Mobile Drawer Navigation */}
-      {mobileMenuOpen && (
-        <div className="mobile-nav-drawer">
-          <div className="mobile-nav-links">
-            <button
-              onClick={() => switchTab('portal')}
-              className={`mobile-nav-item ${currentTab === 'portal' ? 'active' : ''}`}
-            >
-              <Sparkles size={18} /> Resident Services Portal
-            </button>
-            {currentUser?.role === 'admin' && (
-              <button
-                onClick={() => switchTab('admin')}
-                className={`mobile-nav-item ${currentTab === 'admin' ? 'active' : ''}`}
-              >
-                <Shield size={18} /> Admin Command Center
-              </button>
-            )}
-            {currentUser?.role === 'driver' && (
-              <button
-                onClick={() => switchTab('driver')}
-                className={`mobile-nav-item ${currentTab === 'driver' ? 'active' : ''}`}
-              >
-                <Truck size={18} /> Driver Route Tasks
-              </button>
-            )}
-            {currentUser?.role === 'reporter' && (
-              <button
-                onClick={() => switchTab('reporter')}
-                className={`mobile-nav-item ${currentTab === 'reporter' ? 'active' : ''}`}
-              >
-                <User size={18} /> Citizen Portal
-              </button>
-            )}
-          </div>
-
-          <div className="mobile-nav-auth">
-            {currentUser ? (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                <div style={{ fontSize: '0.85rem', color: '#a7f3d0', fontWeight: 600 }}>
-                  Signed in as: {currentUser.full_name} ({currentUser.role.toUpperCase()})
-                </div>
-                <button
-                  onClick={handleLogout}
-                  className="btn btn-secondary btn-sm"
-                  style={{ width: '100%', justifyContent: 'center' }}
-                >
-                  <LogOut size={16} /> Sign Out
-                </button>
-              </div>
-            ) : (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <button
-                  onClick={() => openAuth('admin')}
-                  className="btn btn-outline btn-sm"
-                  style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)', justifyContent: 'center' }}
-                >
-                  <Shield size={15} /> Admin Login
-                </button>
-                <button
-                  onClick={() => openAuth('driver')}
-                  className="btn btn-outline btn-sm"
-                  style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)', justifyContent: 'center' }}
-                >
-                  <Truck size={15} /> Driver Login
-                </button>
-                <button
-                  onClick={() => openAuth('reporter')}
-                  className="btn btn-primary btn-sm"
-                  style={{ justifyContent: 'center' }}
-                >
-                  <LogIn size={15} /> Citizen Sign In / Register
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
 
       {/* Main View Router */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
