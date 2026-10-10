@@ -1,0 +1,100 @@
+{
+  "status": "VALIDATED_ON_HELD_OUT_TEST_SET",
+  "model_name": "EcoVision-WasteNet-MobileNetV3",
+  "model_version": "v3.0-mobilenetv3-small",
+  "evaluated_at": "2026-10-09T20:22:16.512082+00:00",
+  "dataset_name": "TrashNet Held-Out Test Split (15%)",
+  "test_sample_count": 384,
+  "target_classes": [
+    "GLASS",
+    "PAPER",
+    "PLASTIC",
+    "METAL",
+    "ORGANIC"
+  ],
+  "unsupported_classes": [
+    "HAZARDOUS"
+  ],
+  "class_distribution": {
+    "GLASS": 76,
+    "PAPER": 151,
+    "PLASTIC": 73,
+    "METAL": 62,
+    "ORGANIC": 22
+  },
+  "accuracy": 0.8464,
+  "macro_precision": 0.7855,
+  "macro_recall": 0.7748,
+  "macro_f1": 0.7774,
+  "weighted_f1": 0.8442,
+  "per_class_metrics": {
+    "GLASS": {
+      "precision": 0.8182,
+      "recall": 0.8289,
+      "f1_score": 0.8235,
+      "test_sample_count": 76
+    },
+    "PAPER": {
+      "precision": 0.9463,
+      "recall": 0.9338,
+      "f1_score": 0.94,
+      "test_sample_count": 151
+    },
+    "PLASTIC": {
+      "precision": 0.7971,
+      "recall": 0.7534,
+      "f1_score": 0.7746,
+      "test_sample_count": 73
+    },
+    "METAL": {
+      "precision": 0.7778,
+      "recall": 0.9032,
+      "f1_score": 0.8358,
+      "test_sample_count": 62
+    },
+    "ORGANIC": {
+      "precision": 0.5882,
+      "recall": 0.4545,
+      "f1_score": 0.5128,
+      "test_sample_count": 22
+    }
+  },
+  "confusion_matrix": [
+    [
+      63,
+      0,
+      5,
+      7,
+      1
+    ],
+    [
+      3,
+      141,
+      4,
+      1,
+      2
+    ],
+    [
+      5,
+      3,
+      55,
+      7,
+      3
+    ],
+    [
+      4,
+      0,
+      1,
+      56,
+      1
+    ],
+    [
+      2,
+      5,
+      4,
+      1,
+      10
+    ]
+  ],
+  "evaluation_notes": "Evaluated on 384 strictly unseen held-out test photos from the TrashNet benchmark. Zero overlap with training or validation splits. HAZARDOUS waste is unrepresented in TrashNet and falls back to manual review."
+}

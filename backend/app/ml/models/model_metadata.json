@@ -1,0 +1,31 @@
+{
+  "model_name": "EcoVision-WasteNet-MobileNetV3",
+  "model_version": "v3.0-mobilenetv3-small",
+  "architecture": "MobileNetV3-Small (Transfer Learning)",
+  "input_resolution": [
+    224,
+    224,
+    3
+  ],
+  "framework": "PyTorch 2.14.1+cpu",
+  "dataset_name": "TrashNet",
+  "dataset_source": "Gary Thung & Mindy Yang, Stanford CS229 (HuggingFace garythung/trashnet)",
+  "license": "MIT License",
+  "training_samples": 1766,
+  "validation_samples": 377,
+  "test_samples": 384,
+  "training_epochs": 4,
+  "training_duration_seconds": 88.44,
+  "created_at": "2026-10-09T20:21:59.477510+00:00",
+  "weights_file": "ecovision_wastenet_mobilenetv3.pt",
+  "supported_classes": [
+    "GLASS",
+    "PAPER",
+    "PLASTIC",
+    "METAL",
+    "ORGANIC"
+  ],
+  "unsupported_classes": [
+    "HAZARDOUS"
+  ]
+}

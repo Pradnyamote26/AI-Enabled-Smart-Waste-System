@@ -1,0 +1,27 @@
+{
+  "target_classes": [
+    "GLASS",
+    "PAPER",
+    "PLASTIC",
+    "METAL",
+    "ORGANIC"
+  ],
+  "class_to_idx": {
+    "GLASS": 0,
+    "PAPER": 1,
+    "PLASTIC": 2,
+    "METAL": 3,
+    "ORGANIC": 4
+  },
+  "idx_to_class": {
+    "0": "GLASS",
+    "1": "PAPER",
+    "2": "PLASTIC",
+    "3": "METAL",
+    "4": "ORGANIC"
+  },
+  "unsupported_classes": [
+    "HAZARDOUS"
+  ],
+  "unsupported_policy": "Flagged for supervisor review (NEEDS_HUMAN_REVIEW) because HAZARDOUS waste is not represented in the TrashNet training dataset."
+}
