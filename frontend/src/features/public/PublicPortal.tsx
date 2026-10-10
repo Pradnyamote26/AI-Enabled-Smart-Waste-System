@@ -3,7 +3,8 @@ import {
   PlusCircle, Search, Calendar, Bell, HelpCircle, AlertTriangle,
   Truck, CheckCircle2, Clock, MapPin, Radio, Shield,
   RefreshCw, Camera, ArrowRight, X, FileText,
-  User, Check, AlertCircle, Copy, Sparkles
+  User, Check, AlertCircle, Copy, Sparkles,
+  Zap, ShieldCheck, CheckCheck
 } from 'lucide-react';
 import { api } from '../../services/api';
 import { MapComponent } from '../../components/MapComponent';
@@ -413,61 +414,55 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
   return (
     <div className="public-portal-root" style={{ minHeight: '90vh', background: '#f8faf9', paddingBottom: '4rem' }}>
       {/* Hero Header */}
-      <div style={{
-        background: 'linear-gradient(135deg, #081c15 0%, #1b4332 55%, #2d6a4f 100%)',
-        color: '#ffffff',
-        padding: '1.5rem 1.5rem 1.25rem',
-        boxShadow: '0 4px 16px rgba(8, 28, 21, 0.25)',
-        borderBottom: '1px solid rgba(82, 183, 136, 0.2)'
-      }}>
+      <div className="portal-hero-section">
         <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255,255,255,0.12)', padding: '0.25rem 0.65rem', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 600, color: '#86efac', marginBottom: '0.4rem' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(82, 183, 136, 0.2)', border: '1px solid rgba(82, 183, 136, 0.35)', padding: '0.28rem 0.75rem', borderRadius: '50px', fontSize: '0.78rem', fontWeight: 700, color: '#86efac', marginBottom: '0.6rem' }}>
                 <Shield size={13} /> Official Municipal Resident Portal
               </div>
-              <h1 style={{ fontSize: '1.75rem', fontWeight: 800, margin: '0 0 0.25rem', letterSpacing: '-0.02em', color: '#ffffff' }}>
+              <h1 style={{ fontSize: '1.95rem', fontWeight: 800, margin: '0 0 0.35rem', letterSpacing: '-0.025em', color: '#ffffff' }}>
                 EcoRoute Waste Services Portal
               </h1>
-              <p style={{ color: '#d1fae5', fontSize: '0.9rem', maxWidth: '750px', margin: 0, lineHeight: 1.4 }}>
-                Report municipal waste issues, follow assigned collection trucks with live GPS radar, view neighborhood collection schedules, and track resolution proofs.
+              <p style={{ color: '#d1fae5', fontSize: '0.92rem', maxWidth: '780px', margin: 0, lineHeight: 1.5, opacity: 0.95 }}>
+                AI-driven municipal sanitation intelligence: report neighborhood waste issues, follow assigned compactor trucks with live GPS radar, and view verified photographic resolution proofs.
               </p>
             </div>
 
             {/* Resident account status widget */}
             <div>
               {currentUser?.role === 'reporter' ? (
-                <div style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)', padding: '0.65rem 1rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.2)' }}>
-                  <div style={{ fontSize: '0.72rem', color: '#a7f3d0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Welcome, Resident
+                <div style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '0.75rem 1.15rem', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.22)', boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}>
+                  <div style={{ fontSize: '0.72rem', color: '#a7f3d0', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 700 }}>
+                    Active Resident Session
                   </div>
-                  <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#ffffff', marginTop: '0.1rem' }}>
+                  <div style={{ fontWeight: 800, fontSize: '1rem', color: '#ffffff', marginTop: '0.15rem' }}>
                     {currentUser.full_name}
                   </div>
-                  <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.35rem' }}>
+                  <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.45rem', alignItems: 'center' }}>
                     <button
                       onClick={() => setActiveTab('my-reports')}
                       className="btn btn-sm btn-outline"
-                      style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)', fontSize: '0.72rem', padding: '0.2rem 0.5rem' }}
+                      style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', padding: '0.25rem 0.65rem' }}
                     >
-                      My Reports ({myReports.length})
+                      <FileText size={13} /> My Reports ({myReports.length})
                     </button>
                     {unreadNotifsCount > 0 && (
-                      <span style={{ background: '#ef4444', color: '#fff', fontSize: '0.72rem', padding: '0.15rem 0.45rem', borderRadius: '50px', fontWeight: 700 }}>
+                      <span style={{ background: '#ef4444', color: '#fff', fontSize: '0.72rem', padding: '0.2rem 0.5rem', borderRadius: '50px', fontWeight: 700 }}>
                         {unreadNotifsCount} new
                       </span>
                     )}
                   </div>
                 </div>
               ) : (
-                <div style={{ background: 'rgba(0,0,0,0.22)', padding: '0.65rem 1rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.15)', textAlign: 'right' }}>
-                  <div style={{ fontSize: '0.76rem', color: '#e2e8f0' }}>Registered Resident?</div>
+                <div style={{ background: 'rgba(0,0,0,0.28)', backdropFilter: 'blur(10px)', padding: '0.85rem 1.25rem', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.18)', textAlign: 'right' }}>
+                  <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>Registered Resident or Society Lead?</div>
                   <button
                     onClick={() => onOpenAuth && onOpenAuth('reporter')}
                     className="btn btn-sm btn-primary"
-                    style={{ marginTop: '0.3rem', fontSize: '0.78rem', padding: '0.3rem 0.75rem' }}
+                    style={{ marginTop: '0.4rem', fontSize: '0.82rem', padding: '0.35rem 0.9rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
                   >
-                    <User size={12} /> Sign In to Save Tickets
+                    <User size={13} /> Sign In to Save Tickets
                   </button>
                 </div>
               )}
@@ -475,12 +470,12 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
           </div>
 
           {/* Quick-Action Navigation Tabs */}
-          <div style={{ display: 'flex', gap: '0.45rem', marginTop: '1.25rem', flexWrap: 'wrap', borderTop: '1px solid rgba(255,255,255,0.12)', paddingTop: '0.9rem' }}>
+          <div className="portal-tabs-dock">
             <button
               onClick={() => setActiveTab('home')}
               className={`portal-nav-chip ${activeTab === 'home' ? 'active' : ''}`}
             >
-              Services Hub
+              <Sparkles size={14} /> Services Hub
             </button>
             <button
               onClick={() => setActiveTab('report')}
@@ -505,7 +500,7 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
               className={`portal-nav-chip ${activeTab === 'announcements' ? 'active' : ''}`}
             >
               <Bell size={14} /> Service Bulletins
-              {announcements.length > 0 && <span style={{ marginLeft: '4px', background: '#22c55e', color: '#fff', fontSize: '10px', padding: '1px 5px', borderRadius: '10px' }}>{announcements.length}</span>}
+              {announcements.length > 0 && <span style={{ marginLeft: '4px', background: '#22c55e', color: '#fff', fontSize: '10px', padding: '1px 6px', borderRadius: '10px', fontWeight: 800 }}>{announcements.length}</span>}
             </button>
             <button
               onClick={() => setActiveTab('missed')}
@@ -531,7 +526,7 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
         </div>
       </div>
 
-      <div style={{ maxWidth: '1360px', margin: '1.5rem auto 2.5rem', padding: '0 1.25rem' }}>
+      <div style={{ maxWidth: '1360px', margin: '2rem auto 3rem', padding: '0 1.25rem' }}>
         {/* ================================================================= */}
         {/* TAB 1: HOME SERVICES HUB                                          */}
         {/* ================================================================= */}
@@ -539,145 +534,333 @@ export const PublicPortal: React.FC<PublicPortalProps> = ({
           <div>
             {/* Urgent Bulletin Notice if available */}
             {announcements.length > 0 && (
-              <div style={{
-                background: '#ecfdf5',
-                border: '1px solid #a7f3d0',
-                borderRadius: 'var(--radius-md)',
-                padding: '1rem 1.25rem',
-                marginBottom: '2rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1rem'
-              }}>
-                <div style={{ width: '38px', height: '38px', borderRadius: '50%', background: '#d1fae5', color: '#047857', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Bell size={18} />
-                </div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#065f46' }}>
-                    {announcements[0].title}
+              <div className="bulletin-banner-modern">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                  <span className="pulse-beacon" />
+                  <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: '#d1fae5', color: '#047857', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Bell size={18} />
                   </div>
-                  <div style={{ fontSize: '0.85rem', color: '#047857', marginTop: '0.2rem' }}>
+                </div>
+                <div style={{ flex: 1, minWidth: '220px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    <span style={{ fontSize: '0.7rem', fontWeight: 800, color: '#047857', background: '#d1fae5', padding: '0.15rem 0.5rem', borderRadius: '4px', letterSpacing: '0.04em' }}>
+                      ACTIVE CIVIC ADVISORY
+                    </span>
+                    <span style={{ fontWeight: 800, fontSize: '0.98rem', color: '#065f46' }}>
+                      {announcements[0].title}
+                    </span>
+                  </div>
+                  <div style={{ fontSize: '0.86rem', color: '#047857', marginTop: '0.25rem', lineHeight: 1.45 }}>
                     {announcements[0].content}
                   </div>
                 </div>
                 <button
                   onClick={() => setActiveTab('announcements')}
-                  className="btn btn-sm btn-outline"
-                  style={{ color: '#047857', borderColor: '#a7f3d0' }}
+                  className="btn btn-sm"
+                  style={{ background: '#047857', color: '#ffffff', fontWeight: 700, borderRadius: '8px', padding: '0.5rem 1rem', whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', border: 'none' }}
                 >
-                  View All Bulletins
+                  View All Bulletins <ArrowRight size={14} />
                 </button>
               </div>
             )}
 
-            {/* Quick Service Cards */}
-            <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--forest-900)', marginBottom: '1.25rem' }}>
-              Municipal Citizen Services
-            </h2>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem' }}>
-              <div
-                onClick={() => setActiveTab('report')}
-                className="public-service-card"
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="service-card-icon" style={{ background: '#dcfce7', color: '#16a34a' }}>
-                  <PlusCircle size={26} />
+            {/* Live Municipal Operations Telemetry Ribbon */}
+            <div className="operations-ribbon">
+              <div className="telemetry-card">
+                <div className="telemetry-icon-box" style={{ background: '#ecfdf5', color: '#10b981' }}>
+                  <Truck size={22} />
                 </div>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--forest-900)', margin: '0.75rem 0 0.35rem' }}>
-                  Report Waste Incident
-                </h3>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.4, margin: '0 0 1rem' }}>
-                  Report overflowing dustbins, uncollected building garbage, or illegal dumping with photo evidence and automatic AI assessment.
-                </p>
-                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#16a34a', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-                  File Report <ArrowRight size={14} />
-                </span>
+                <div>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--forest-900)' }}>
+                    24 Fleets Active
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                    Live GPS compactor telemetry
+                  </div>
+                </div>
               </div>
 
-              <div
-                onClick={() => setActiveTab('track')}
-                className="public-service-card"
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="service-card-icon" style={{ background: '#e0f2fe', color: '#0284c7' }}>
-                  <Radio size={26} />
+              <div className="telemetry-card">
+                <div className="telemetry-icon-box" style={{ background: '#e0f2fe', color: '#0284c7' }}>
+                  <Zap size={22} />
                 </div>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--forest-900)', margin: '0.75rem 0 0.35rem' }}>
-                  Track Request & Live Truck Radar
-                </h3>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.4, margin: '0 0 1rem' }}>
-                  Follow your assigned collection vehicle with live GPS telemetry, road arrival estimates (ETA), and completion proof photos.
-                </p>
-                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0284c7', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-                  Track Ticket <ArrowRight size={14} />
-                </span>
+                <div>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--forest-900)' }}>
+                    &lt; 1.5h Dispatch
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                    Average priority response
+                  </div>
+                </div>
               </div>
 
-              <div
-                onClick={() => setActiveTab('schedules')}
-                className="public-service-card"
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="service-card-icon" style={{ background: '#fef3c7', color: '#d97706' }}>
-                  <Calendar size={26} />
+              <div className="telemetry-card">
+                <div className="telemetry-icon-box" style={{ background: '#fef3c7', color: '#d97706' }}>
+                  <CheckCheck size={22} />
                 </div>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--forest-900)', margin: '0.75rem 0 0.35rem' }}>
-                  Collection Schedules
-                </h3>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.4, margin: '0 0 1rem' }}>
-                  Find daily and weekly municipal garbage collection timings, route shifts, and compactor truck service windows for your sector.
-                </p>
-                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#d97706', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-                  Check Schedules <ArrowRight size={14} />
-                </span>
+                <div>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--forest-900)' }}>
+                    96.8% Same-Day SLA
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                    Civic clearance fulfillment
+                  </div>
+                </div>
               </div>
 
-              <div
-                onClick={() => setActiveTab('missed')}
-                className="public-service-card"
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="service-card-icon" style={{ background: '#fee2e2', color: '#dc2626' }}>
-                  <AlertTriangle size={26} />
+              <div className="telemetry-card">
+                <div className="telemetry-icon-box" style={{ background: '#f3e8ff', color: '#9333ea' }}>
+                  <ShieldCheck size={22} />
                 </div>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--forest-900)', margin: '0.75rem 0 0.35rem' }}>
-                  Report Missed Collection
-                </h3>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.4, margin: '0 0 1rem' }}>
-                  Has scheduled collection run concluded without clearing your society or building dustbins? File a missed pickup alert.
-                </p>
-                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#dc2626', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-                  Report Missed Service <ArrowRight size={14} />
-                </span>
+                <div>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--forest-900)' }}>
+                    100% Photo Proof
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                    Verified site resolution
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Service Commitments & Standards */}
-            <div style={{ background: '#ffffff', borderRadius: 'var(--radius-lg)', padding: '1.75rem', border: '1px solid var(--border-color)', marginBottom: '2.5rem' }}>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--forest-900)', marginBottom: '1rem' }}>
-                Municipal Service Level Guarantees (SLAs)
+            {/* Quick Service Cards Section Header */}
+            <div style={{ marginBottom: '1.35rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <div>
+                <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0 0 0.25rem', letterSpacing: '-0.01em' }}>
+                  Municipal Citizen Services
+                </h2>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)' }}>
+                  Instant digital sanitation services powered by AI triage, Clarke-Wright routing, and live vehicle tracking.
+                </p>
+              </div>
+            </div>
+
+            {/* 4 Interactive Service Cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.35rem', marginBottom: '2.75rem' }}>
+              {/* Card 1: Report Waste */}
+              <div
+                onClick={() => setActiveTab('report')}
+                className="public-service-card card-report"
+              >
+                <div>
+                  <div className="service-card-top">
+                    <div className="service-card-icon-modern" style={{ background: 'linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)', color: '#16a34a', boxShadow: '0 4px 12px rgba(22, 163, 74, 0.15)' }}>
+                      <PlusCircle size={26} />
+                    </div>
+                    <span className="service-card-badge" style={{ background: '#dcfce7', color: '#15803d' }}>
+                      Instant AI Triage
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0 0 0.45rem' }}>
+                    Report Waste Incident
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5, margin: 0 }}>
+                    Upload photo evidence of overflowing bins, street spills, or illegal dumping. On-device AI classifies waste type, volume, and tags GPS coordinates automatically.
+                  </p>
+                </div>
+                <div className="service-card-action" style={{ color: '#16a34a' }}>
+                  <span>File Incident Report</span>
+                  <ArrowRight size={16} />
+                </div>
+              </div>
+
+              {/* Card 2: Track Request */}
+              <div
+                onClick={() => setActiveTab('track')}
+                className="public-service-card card-track"
+              >
+                <div>
+                  <div className="service-card-top">
+                    <div className="service-card-icon-modern" style={{ background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)', color: '#0284c7', boxShadow: '0 4px 12px rgba(2, 132, 199, 0.15)' }}>
+                      <Radio size={26} />
+                    </div>
+                    <span className="service-card-badge" style={{ background: '#e0f2fe', color: '#0369a1' }}>
+                      Live GPS Radar
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0 0 0.45rem' }}>
+                    Track Request & Radar
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5, margin: 0 }}>
+                    Follow your assigned municipal compactor in real-time with road route geometry, estimated arrival time (ETA), driver details, and before/after photos.
+                  </p>
+                </div>
+                <div className="service-card-action" style={{ color: '#0284c7' }}>
+                  <span>Track With Secret Token</span>
+                  <ArrowRight size={16} />
+                </div>
+              </div>
+
+              {/* Card 3: Collection Schedules */}
+              <div
+                onClick={() => setActiveTab('schedules')}
+                className="public-service-card card-schedule"
+              >
+                <div>
+                  <div className="service-card-top">
+                    <div className="service-card-icon-modern" style={{ background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)', color: '#d97706', boxShadow: '0 4px 12px rgba(217, 119, 6, 0.15)' }}>
+                      <Calendar size={26} />
+                    </div>
+                    <span className="service-card-badge" style={{ background: '#fef3c7', color: '#b45309' }}>
+                      Daily 06:30 AM
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0 0 0.45rem' }}>
+                    Collection Schedules
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5, margin: 0 }}>
+                    Find daily and weekly municipal garbage collection timings, route shifts, and compactor truck service windows for your residential sector.
+                  </p>
+                </div>
+                <div className="service-card-action" style={{ color: '#d97706' }}>
+                  <span>Explore Ward Timings</span>
+                  <ArrowRight size={16} />
+                </div>
+              </div>
+
+              {/* Card 4: Missed Collection */}
+              <div
+                onClick={() => setActiveTab('missed')}
+                className="public-service-card card-missed"
+              >
+                <div>
+                  <div className="service-card-top">
+                    <div className="service-card-icon-modern" style={{ background: 'linear-gradient(135deg, #fee2e2 0%, #fecaca 100%)', color: '#dc2626', boxShadow: '0 4px 12px rgba(220, 38, 38, 0.15)' }}>
+                      <AlertTriangle size={26} />
+                    </div>
+                    <span className="service-card-badge" style={{ background: '#fee2e2', color: '#b91c1c' }}>
+                      Priority Escalation
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0 0 0.45rem' }}>
+                    Report Missed Collection
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5, margin: 0 }}>
+                    Has scheduled morning collection concluded without clearing your society or commercial premises? File an immediate supervisor escalation ticket.
+                  </p>
+                </div>
+                <div className="service-card-action" style={{ color: '#dc2626' }}>
+                  <span>Escalate Missed Pickup</span>
+                  <ArrowRight size={16} />
+                </div>
+              </div>
+            </div>
+
+            {/* 3-Step Resident Workflow Guide */}
+            <div className="workflow-guide-box">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--forest-700)', background: 'rgba(82, 183, 136, 0.2)', padding: '0.2rem 0.6rem', borderRadius: '50px' }}>
+                  CITIZEN CHARTER WORKFLOW
+                </span>
+              </div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0 0 0.35rem' }}>
+                How EcoRoute Resolves Sanitation in 3 Connected Steps
               </h3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
-                <div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#16a34a' }}>&lt; 2 Hours</div>
-                  <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--forest-900)', marginTop: '0.25rem' }}>High-Priority Response</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>Hazardous waste and severe overflow spills dispatched with priority.</div>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', margin: 0 }}>
+                Transparent, algorithmically optimized municipal workflow from citizen snapshot to certified supervisor clearance.
+              </p>
+
+              <div className="workflow-steps-grid">
+                <div className="workflow-step-item">
+                  <div className="workflow-step-num">01</div>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: '#dcfce7', color: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}>
+                    <Camera size={18} />
+                  </div>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0 0 0.35rem' }}>
+                    Snap & Auto-Locate
+                  </h4>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.45 }}>
+                    Take a photo. On-device MobileNet/CNN classifies waste type & volume, while reverse geocoding tags the exact street landmark automatically.
+                  </p>
                 </div>
-                <div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0284c7' }}>100% Verified</div>
-                  <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--forest-900)', marginTop: '0.25rem' }}>Photographic Proof</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>Drivers upload before/after photos verified by supervisors before tickets close.</div>
+
+                <div className="workflow-step-item">
+                  <div className="workflow-step-num">02</div>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: '#e0f2fe', color: '#0284c7', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}>
+                    <Truck size={18} />
+                  </div>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0 0 0.35rem' }}>
+                    Dynamic Route Dispatch
+                  </h4>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.45 }}>
+                    Clarke-Wright heuristic solver re-sequences the nearest compactor vehicle's route, minimizing deadhead travel and broadcasting live GPS radar.
+                  </p>
                 </div>
-                <div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#d97706' }}>Daily 06:30 AM</div>
-                  <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--forest-900)', marginTop: '0.25rem' }}>Morning Shift Start</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>All residential sectors serviced during allocated morning sanitation windows.</div>
+
+                <div className="workflow-step-item">
+                  <div className="workflow-step-num">03</div>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: '#f3e8ff', color: '#9333ea', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}>
+                    <CheckCircle2 size={18} />
+                  </div>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--forest-900)', margin: '0 0 0.35rem' }}>
+                    Photographic Proof & Sign-Off
+                  </h4>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.45 }}>
+                    Driver uploads timestamped before/after clearance proof. Depot supervisors verify closure, and citizens retain 48-hour reopen rights if unsatisfied.
+                  </p>
                 </div>
-                <div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#9333ea' }}>Reopen Protection</div>
-                  <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--forest-900)', marginTop: '0.25rem' }}>Resident Sign-Off</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>Citizens can reopen any ticket if waste remains uncleared on site.</div>
+              </div>
+            </div>
+
+            {/* Service Commitments & Standards (SLAs) */}
+            <div className="sla-charter-container">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                <ShieldCheck size={20} color="#16a34a" />
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--forest-900)', margin: 0 }}>
+                  Municipal Service Level Commitments (SLAs)
+                </h3>
+              </div>
+              <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', margin: '0.2rem 0 0' }}>
+                Enforceable municipal standards backed by automated supervisor escalation and public verification.
+              </p>
+
+              <div className="sla-charter-grid">
+                <div className="sla-metric-box">
+                  <div style={{ fontSize: '1.65rem', fontWeight: 800, color: '#16a34a', letterSpacing: '-0.02em' }}>
+                    &lt; 2 Hours
+                  </div>
+                  <div style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--forest-900)', marginTop: '0.25rem' }}>
+                    High-Priority Response
+                  </div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: 1.45 }}>
+                    Hazardous materials, hospital clinic waste, and severe overflowing bin spills dispatched with priority.
+                  </div>
+                </div>
+
+                <div className="sla-metric-box">
+                  <div style={{ fontSize: '1.65rem', fontWeight: 800, color: '#0284c7', letterSpacing: '-0.02em' }}>
+                    100% Proof
+                  </div>
+                  <div style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--forest-900)', marginTop: '0.25rem' }}>
+                    Photographic Proof
+                  </div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: 1.45 }}>
+                    Drivers upload geo-tagged before/after photos verified by depot supervisors before tickets close.
+                  </div>
+                </div>
+
+                <div className="sla-metric-box">
+                  <div style={{ fontSize: '1.65rem', fontWeight: 800, color: '#d97706', letterSpacing: '-0.02em' }}>
+                    06:30 AM
+                  </div>
+                  <div style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--forest-900)', marginTop: '0.25rem' }}>
+                    Morning Shift Start
+                  </div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: 1.45 }}>
+                    All residential sectors serviced during allocated morning sanitation windows without skipping stops.
+                  </div>
+                </div>
+
+                <div className="sla-metric-box">
+                  <div style={{ fontSize: '1.65rem', fontWeight: 800, color: '#9333ea', letterSpacing: '-0.02em' }}>
+                    48h Sign-Off
+                  </div>
+                  <div style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--forest-900)', marginTop: '0.25rem' }}>
+                    Resident Protection
+                  </div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: 1.45 }}>
+                    Citizens can reopen any ticket if waste remains uncleared on site, escalating directly to senior officers.
+                  </div>
                 </div>
               </div>
             </div>
